@@ -151,11 +151,12 @@ class Downloads extends React.Component {
 					</div>
 				</li>
 			</ul>
-			<p className="tip">These will be downloaded to <code>{ formatPath( downloadPath ) }</code>.</p>
 
 			{ done ?
 				<p><Button icon="arrow-right" light onClick={ this.props.onNext }>Next</Button></p>
-			: null }
+			:
+				<p className="tip">These will be downloaded to <code>{ formatPath( downloadPath ) }</code>.</p>
+			}
 		</li>;
 	}
 }
