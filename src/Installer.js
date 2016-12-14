@@ -33,17 +33,18 @@ class Installer extends React.Component {
 
 		return <div id="app" className="Installer">
 			<Steps step={ this.state.step }>
-				<Welcome onNext={() => this.onNext()} />
-				<Downloads onNext={() => this.onNext()} />
+				<Welcome key="welcome" onNext={() => this.onNext()} />
+				<Downloads key="downloads" onNext={() => this.onNext()} />
 
 				{ vagrant.machines.length > 0 ?
 					<ImportBoxes
+						key="importboxes"
 						boxes={ vagrant.machines }
 						onNext={() => this.onNext()}
 					/>
 				: null }
 
-				<Ready onNext={() => this.onFinish()}/>
+				<Ready key="ready" onNext={() => this.onFinish()}/>
 			</Steps>
 		</div>;
 	}

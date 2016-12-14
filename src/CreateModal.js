@@ -64,10 +64,12 @@ class CreateModal extends React.Component {
 
 			<Steps step={ this.state.step }>
 				<Type
+					key="type"
 					onDismiss={ this.props.onDismiss }
 					onSelect={ (...args) => this.onSelect(...args) }
 				/>
 				<Config
+					key="config"
 					name={ this.state.name }
 					path={ this.state.path }
 					type={ this.state.type }
