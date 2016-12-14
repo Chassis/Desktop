@@ -69,7 +69,7 @@ export default props => {
 						icon="external-link"
 						shortcut="cmd+o"
 						title="Open in Browser"
-						onClick={() => openBrowser(domain)}
+						onClick={() => openBrowser(`http://${domain}/`)}
 					>Open</Button>
 				: null }
 

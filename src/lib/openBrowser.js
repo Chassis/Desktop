@@ -1,3 +1,3 @@
 import { spawn } from 'child_process';
 
-export default domain => spawn('open', [`http://${domain}/`]);
+export default url => spawn( 'open', [ url ] );
