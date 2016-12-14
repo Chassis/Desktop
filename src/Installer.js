@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import './Installer.css';
 
 import { setStatus } from './lib/actions/install';
-import Chassis from './Installer/Chassis';
 import Downloads from './Installer/Downloads';
 import ImportBoxes from './Installer/ImportBoxes';
 import Ready from './Installer/Ready';
