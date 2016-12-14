@@ -97,7 +97,8 @@ export default class Keys {
 			return;
 		}
 
-		let handlers = this.handlers[ e.key ];
+		// Slice to ensure handlers doesn't change while firing.
+		let handlers = this.handlers[ e.key ].slice();
 		for ( let index = 0; index < handlers.length; index++ ) {
 			let handler = handlers[ index ];
 			if ( compare( e, handler ) ) {
