@@ -1,3 +1,4 @@
+import deepmerge from 'deepmerge';
 import { applyMiddleware, createStore as createReduxStore } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -29,7 +30,7 @@ export default function createStore() {
 	let storedState = localStorage.getItem( 'store' );
 	if ( storedState ) {
 		try {
-			initialState = Object.assign({}, initialState, JSON.parse( storedState ) );
+			initialState = deepmerge( initialState, JSON.parse( storedState ) );
 		} catch (e) {
 			// No-op
 		}
