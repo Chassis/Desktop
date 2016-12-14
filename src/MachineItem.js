@@ -153,7 +153,7 @@ export default class MachineItem extends React.Component {
 							light
 							shortcut="cmd+s"
 							onClick={ () => this.onSave() }
-						>Save</Button>
+						>{ empty( this.getChanges() ) ? "Done" : "Save" }</Button>
 					</div>
 				:
 					<div className="domain">
