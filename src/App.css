@@ -1,0 +1,11 @@
+.App {
+	flex-grow: 1;
+	width: 100%;
+	background: #ececec;
+	display: flex;
+	flex-direction: column;
+}
+
+.app-content {
+	overflow-y: auto;
+}

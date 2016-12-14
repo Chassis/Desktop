@@ -1,0 +1,30 @@
+.Downloads {
+}
+
+.Downloads ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.Downloads li {
+	display: flex;
+	align-items: center;
+}
+
+.Downloads li .logo {
+	width: 55px;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.Downloads .logo img {
+	width: 48px;
+	padding-right: 1rem;
+	height: auto;
+}
+
+.Downloads .details {
+	flex-grow: 1;
+	text-align: left;
+}

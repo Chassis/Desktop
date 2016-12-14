@@ -1,0 +1,94 @@
+/*
+660×540
+*/
+
+html, body {
+	height: 100%;
+	font-size: 16px;
+	user-select: none;
+}
+
+html {
+	background: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	display: flex;
+}
+
+#root {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+pre {
+	font-family: Input, monospace;
+}
+
+.splash-fade-leave {
+	opacity: 1;
+	transition: opacity 400ms;
+}
+
+.splash-fade-leave-active {
+	opacity: 0;
+}
+
+.splash-fade-enter {
+	opacity: 0;
+	transition: opacity 400ms;
+}
+
+.splash-fade-enter-active {
+	opacity: 1;
+}
+
+.fader {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.fader > * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+}
+
+.Splash {
+	background: #29ABE2;
+	color: #fff;
+
+	flex-grow: 1;
+	flex-shrink: 0;
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.Splash-loader {
+	animation: Splash-loader infinite 2s linear;
+}
+
+@keyframes Splash-loader {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}

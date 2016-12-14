@@ -1,0 +1,97 @@
+.MachineItem {
+	border-bottom: 1px solid #ccc;
+}
+
+.MachineItem .row {
+	display: flex;
+	align-items: center;
+	padding: 0.4rem 0.5rem;
+	// transition: background 140ms;
+	transition: background 120ms, color 120ms;
+}
+
+.MachineItem .row * {
+}
+
+.MachineItem.selected .row {
+	background: #29ABE2;
+	color: #fff;
+}
+
+.MachineItem .status {
+	color: red;
+	align-self: center;
+	margin-right: 0.75em;
+	width: 10px;
+}
+.MachineItem.running .status {
+	color: limegreen;
+}
+.MachineItem.indeterminate .status {
+	color: orange;
+}
+
+.MachineItem .status svg {
+	width: 14px;
+	height: 14px;
+	fill: currentColor;
+}
+
+.MachineItem .info {
+	flex-grow: 1;
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	// font-size: 0.875rem;
+}
+
+.MachineItem .info h1 {
+	margin: 0;
+	font-size: inherit;
+	line-height: 1.5;
+	display: flex;
+	align-items: baseline;
+}
+
+.MachineItem .info p {
+	margin: 0;
+	color: #929292;
+	font-size: 0.7857rem;
+	transition: color 120ms;
+}
+
+.MachineItem.selected .info p {
+	color: #eee;
+}
+
+.MachineItem .domain {
+	font-size: 0.875rem;
+	align-self: center;
+}
+.MachineItem .domain p {
+	margin: 0;
+}
+
+.MachineItem .MachineDetails {
+	display: none;
+}
+.MachineItem.selected .MachineDetails {
+	display: block;
+}
+
+.MachineItem .info input {
+	font-size: inherit;
+	background: transparent;
+	color: #fff;
+	border: 1px solid transparent;
+	border-bottom-color: #fff;
+	margin: 0 -4px;
+	padding-left: 3px;
+	// padding-right: 2px;
+	height: 24px;
+}
+.MachineItem .info input:focus {
+	outline: 0;
+	border-color: #fff;
+}

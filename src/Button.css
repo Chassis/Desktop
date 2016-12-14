@@ -1,0 +1,46 @@
+.Button {
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid transparent;
+	font-size: 1rem;
+	padding: 0.3rem 0.4rem;
+	border-radius: 4px;
+	margin-left: 0.5rem;
+
+	color: #29ABE2;
+	border-color: rgba(41, 171, 226, 0.4);
+}
+
+.Button:first-child {
+	margin-left: 0;
+}
+
+.Button.light {
+	color: #fff;
+	border-color: transparent;
+}
+
+.Button.tiny {
+	font-size: 0.70rem;
+	padding: 0.16em 0.25em;
+	vertical-align: top;
+}
+
+.Button:hover {
+	background: rgba(41, 171, 226, 0.1);
+}
+
+.Button.light:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.Button:focus {
+	outline: none;
+	border-color: currentColor;
+}
+
+.Button i {
+	margin-right: 0.5em;
+}

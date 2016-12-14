@@ -1,0 +1,44 @@
+.ImportBoxes .box-list {
+	text-align: left;
+	list-style: none;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	border-radius: 3px;
+	overflow-y: scroll;
+	height: 20rem;
+
+	background: #fff;
+	// color: #29ABE2;
+	color: #333;
+}
+
+.ImportBoxes .box-list label {
+	display: block;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.ImportBoxes .box-list li:nth-child(2n) {
+	background: rgba(41, 171, 226, 0.1);
+}
+
+.ImportBoxes .box-list label:hover {
+	background: rgba(255, 255, 255, 0.2);
+	background: rgba(41, 171, 226, 0.2);
+}
+
+.ImportBoxes input[type=checkbox] {
+	margin-right: 0.5rem;
+	font-size: 1rem;
+}
+
+.ImportBoxes .button-hole {
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

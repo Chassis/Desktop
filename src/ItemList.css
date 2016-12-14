@@ -1,0 +1,7 @@
+.ItemList > input {
+	display: block;
+}
+
+.ItemList > .Button {
+	margin-left: 0;
+}

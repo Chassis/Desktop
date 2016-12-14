@@ -1,0 +1,23 @@
+.Modal {
+	text-align: center;
+	background: #29ABE2;
+	color: #fff;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.Modal header {
+	padding: 0.6rem;
+}
+
+.Modal h1 {
+	font-size: 1.5rem;
+}

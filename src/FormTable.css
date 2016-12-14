@@ -1,0 +1,26 @@
+.FormTable > * {
+	display: flex;
+	margin-bottom: 1rem;
+	align-items: baseline;
+}
+
+.FormTable > * > :first-child {
+	display: block;
+	width: 10rem;
+	flex-shrink: 0;
+	text-align: right;
+	margin-right: 2rem;
+}
+
+.FormTable input[type="text"] {
+	font-size: inherit;
+	padding: 0.2em;
+}
+
+.FormTable .description {
+	font-size: 0.8em;
+	font-style: italic;
+	opacity: 0.8;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}

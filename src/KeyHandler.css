@@ -1,0 +1,19 @@
+.KeyHandler {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	opacity: 0;
+	transition: opacity 140ms;
+}
+.KeyHandler > span {
+	padding: 0.4rem;
+	background: rgba(102, 102, 102, 0.7);
+	color: #fff;
+	border-radius: 0.2rem;
+}
+.KeyHandler.visible {
+	opacity: 1;
+}

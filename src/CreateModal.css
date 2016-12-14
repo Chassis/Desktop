@@ -1,0 +1,76 @@
+.CreateModal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.CreateModal header {
+	// display: flex;
+	// justify-content: center;
+	text-align: center;
+}
+
+.CreateModal header .Button {
+	// float: left;
+}
+
+.CreateModal .create-type {
+	text-align: left;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1.4;
+}
+
+.CreateModal .create-type li {
+	margin-bottom: 1rem;
+}
+
+.CreateModal .create-type a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 4px;
+	padding: 0.5rem;
+}
+
+.CreateModal .create-type a:hover {
+	border-color: #fff;
+}
+
+.CreateModal .create-type a > i {
+	font-size: 2rem;
+	width: 2rem;
+	text-align: center;
+	margin-left: 0.5rem;
+	margin-right: 1rem;
+}
+
+.CreateModal .create-type p {
+	margin: 0 0 0.25rem;
+}
+
+.CreateModal .create-type .name {
+	font-weight: bold;
+}
+
+.CreateModal input[type=text] {
+	font-size: 1rem;
+	padding: 0.5rem;
+	background: rgba(255, 255, 255, 0.05);
+	color: #fff;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.CreateModal input[type=text]::placeholder {
+	color: rgba(255, 255, 255, 0.4);
+}
+.CreateModal input[type=text]:focus {
+	outline: 0;
+	border-color: #fff;
+}
+
+.CreateModal .actions {
+	margin-top: 1rem;
+}

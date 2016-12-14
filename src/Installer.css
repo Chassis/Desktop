@@ -1,0 +1,60 @@
+.Installer {
+	text-align: center;
+	background: #29ABE2;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	height: 100%;
+}
+
+.Installer header {
+	padding: 0.6rem;
+}
+
+.Installer h1 {
+	font-size: 1.5rem;
+}
+
+.Installer .Steps {
+	line-height: 1.5;
+}
+
+.Installer .steps h2 {
+	font-size: 1rem;
+	margin-bottom: 1rem;
+}
+
+.Installer small {
+	font-size: 0.8rem;
+}
+
+.Installer p {
+	margin-bottom: 1rem;
+}
+
+.Installer .tip {
+	font-size: 0.8rem;
+	margin: 0.5rem auto;
+	max-width: 70%;
+}
+
+.Installer .toolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+}
+
+.Installer .toolbar ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.Installer .toolbar li {
+	margin-right: 1rem;
+	line-height: 1.7;
+}

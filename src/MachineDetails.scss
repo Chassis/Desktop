@@ -1,0 +1,37 @@
+.MachineDetails {
+	background: #ececec;
+	padding: 0.5rem;
+}
+.MachineDetails button {
+	font-size: 0.857rem;
+}
+.MachineDetails .terminal-wrap {
+	position: relative;
+	background: darken(#29ABE2, 40%);
+}
+.MachineDetails .terminal {
+	background: darken(#29ABE2, 40%);
+	color: #fff;
+	height: 2.2rem;
+	width: 100%;
+	margin-top: 1rem;
+	overflow: auto;
+}
+.MachineDetails .terminal.full {
+	height: 10rem;
+}
+.MachineDetails .terminal pre {
+	padding: 0.6rem 1rem;
+	width: 100%;
+	margin: 0;
+	font-size: 0.6875rem;
+	line-height: 1.4;
+}
+.MachineDetails .terminal .no-content {
+	opacity: 0.4;
+}
+.MachineDetails .terminal-wrap > .Button {
+	position: absolute;
+	right: 1rem;
+	top: 0.5rem;
+}

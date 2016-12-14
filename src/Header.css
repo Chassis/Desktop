@@ -1,0 +1,46 @@
+.Header {
+	flex-shrink: 0;
+	background: #29ABE2;
+	padding: 2rem 12px 1rem;
+	//padding: 1rem 12px 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	-webkit-app-region: drag;
+	// border-top: 21px solid rgb(193, 230, 246);
+	border-bottom: 1px solid #fff;
+}
+
+.Header .title {
+	font-size: 1.25rem;
+	color: #fff;
+	display: flex;
+	align-items: center;
+}
+
+.Header img {
+	height: 32px;
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+
+.Header .actions {
+	-webkit-app-region: no-drag;
+}
+
+.Header .actions .Button {
+	color: #fff;
+}
+
+.Header .actions button:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.Header .actions button:focus {
+	outline: none;
+	border: 1px solid #fff;
+}
+
+.Header .actions i {
+	margin-right: 0.5rem;
+}

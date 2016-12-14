@@ -1,0 +1,8 @@
+.MachineActions {
+	display: flex;
+	justify-content: space-between;
+}
+
+.MachineActions .secondary {
+	text-align: right;
+}
