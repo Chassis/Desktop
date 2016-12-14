@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { deselectBox, finishEditingBox, runCommand, selectBox, startEditingBox, saveBoxChanges, updateBoxStatus } from './lib/actions';
+import { deselectBox, finishEditingBox, runCommand, selectBox, showModal, startEditingBox, saveBoxChanges, updateBoxStatus } from './lib/actions';
+import Button from './Button';
 import MachineItem from './MachineItem';
 
 import './MachineList.css';
@@ -32,6 +33,16 @@ class MachineList extends React.Component {
 					onSelect={ () => dispatch(selectBox(machine.path)) }
 				/>
 			)}
+
+			{ boxes.length === 0 ?
+				<div className="empty-message">
+					<p>
+						<Button
+							onClick={() => dispatch(showModal('create'))}
+						>Add your first box</Button>
+					</p>
+				</div>
+			: null }
 		</div>;
 	}
 }
