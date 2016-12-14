@@ -1,12 +1,10 @@
-import { spawn } from 'child_process';
 import React from 'react';
 
+import openBrowser from './lib/openBrowser';
 import Button from './Button';
 import LoadingIndicator from './LoadingIndicator';
 
 import './MachineActions.css';
-
-const onBrowser = domain => spawn('open', [`http://${domain}/`]);
 
 export default props => {
 	let mainActions, status;
@@ -71,7 +69,7 @@ export default props => {
 						icon="external-link"
 						shortcut="cmd+o"
 						title="Open in Browser"
-						onClick={() => onBrowser(domain)}
+						onClick={() => openBrowser(domain)}
 					>Open</Button>
 				: null }
 
