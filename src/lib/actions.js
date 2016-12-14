@@ -11,7 +11,6 @@ export { install, updateMachineConfig };
 export const INIT_VAGRANT = 'INIT_VAGRANT';
 export const ADD_BOX = 'ADD_BOX';
 export const UPDATE_BOX = 'UPDATE_BOX';
-export const UPDATE_BOX_STATUS = 'UPDATE_BOX_STATUS';
 export const SELECT_BOX = 'SELECT_BOX';
 export const REMOVE_BOX = 'REMOVE_BOX';
 export const SET_EDITING = 'SET_EDITING';

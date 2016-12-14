@@ -5,15 +5,6 @@ export default function boxes(state = [], action) {
 		case actions.ADD_BOX:
 			return [ ...state, action.machine ];
 
-		case actions.UPDATE_BOX_STATUS:
-			return state.map(box => {
-				if (box.path !== action.path) {
-					return box;
-				}
-
-				return { ...box, status: action.state };
-			});
-
 		case actions.UPDATE_BOX:
 			return state.map(box => {
 				if (box.path !== action.path) {

@@ -1,7 +1,7 @@
 import {spawn} from 'child_process';
 
-import {UPDATE_BOX_STATUS} from '../actions';
-import {parseGlobalStatus} from '../vagrant/parser';
+import { UPDATE_BOX } from '../actions';
+import { parseGlobalStatus } from '../vagrant/parser';
 
 export default function updateGlobalStatus() {
 	return (dispatch, getStore) => {
@@ -20,9 +20,9 @@ export default function updateGlobalStatus() {
 				}
 
 				dispatch({
-					type: UPDATE_BOX_STATUS,
+					type: UPDATE_BOX,
 					path: box.path,
-					state: machine.state
+					data: { status: machine.state }
 				});
 			})
 		});

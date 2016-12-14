@@ -1,6 +1,6 @@
 import {spawn} from 'child_process';
 
-import {UPDATE_BOX_STATUS} from '../actions';
+import { UPDATE_BOX } from '../actions';
 import parser from '../vagrant/parser';
 
 export default function updateBoxStatus(path) {
@@ -11,7 +11,7 @@ export default function updateBoxStatus(path) {
 			return;
 		}
 
-		dispatch({ type: UPDATE_BOX_STATUS, path, state: 'loading' });
+		dispatch({ type: UPDATE_BOX, path, data: { status: 'loading' } });
 
 		const process = spawn('vagrant', ['status', '--machine-readable'], {
 			cwd: machine.path,
@@ -24,7 +24,7 @@ export default function updateBoxStatus(path) {
 			const stateItem = parsed.find(item => item.type === 'state' );
 			const state = stateItem.data[0];
 
-			dispatch({ type: UPDATE_BOX_STATUS, path, state });
+			dispatch({ type: UPDATE_BOX, path, data: { status: state } });
 		});
 	};
 }
