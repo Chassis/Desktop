@@ -78,6 +78,7 @@ class CreateModal extends React.Component {
 					name={ this.state.name }
 					path={ this.state.path }
 					type={ this.state.type }
+					onBack={ () => this.setState( state => ({ step: state.step - 1 }) ) }
 					onSubmit={() => this.onCreate()}
 				/>
 			</Steps>
