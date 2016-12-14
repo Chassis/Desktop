@@ -23,7 +23,7 @@ export const SET_CREATE_MODAL_STEP = 'SET_CREATE_MODAL_STEP';
 export const RESET = 'RESET';
 
 export function addBox(name, path) {
-	return { type: ADD_BOX, name, path };
+	return { type: ADD_BOX, machine: { name, path, domain: "", status: "" } };
 }
 
 export function createBox(name, path) {
