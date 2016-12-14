@@ -37,7 +37,7 @@ export default function createStore() {
 
 	let store = createReduxStore( reducers, initialState, applyMiddleware( thunk ) );
 	store.subscribe(() => {
-		let mapper = store => ({ boxes: store.boxes });
+		let mapper = store => ({ boxes: store.boxes, installer: { installed: store.installer.installed } });
 		localStorage.setItem( 'store', JSON.stringify( mapper( store.getState() ) ) );
 	});
 
