@@ -1,6 +1,8 @@
 import React from 'react';
+import tildify from 'tildify';
 
 import Button from '../Button';
+import FormTable from '../FormTable';
 import Step from '../Step';
 import { TYPES } from './Type';
 
@@ -22,7 +24,7 @@ export default props => {
 			break;
 
 		case TYPES.IMPORT:
-			message = <p>You are adding a Chassis install to the client.</p>;
+			message = <p>You are adding an existing Chassis box to the list.</p>;
 			break;
 
 		default:
@@ -32,10 +34,20 @@ export default props => {
 	return <Step>
 		<h2>Ready?</h2>
 		{ message }
-		<p>
-			<strong>Chassis Directory:</strong>
-			{ props.path }
-		</p>
+
+		<FormTable>
+			<label>
+				<div>Name</div>
+				<input type="text" value={ props.name } />
+			</label>
+			<div>
+				<div>Chassis Directory</div>
+				<div style={{ textAlign: "left" }}>
+					<code>{ tildify( props.path ) }</code>
+				</div>
+			</div>
+		</FormTable>
+
 		<Button light>Cancel</Button>
 		<Button light onClick={ props.onSubmit }>Create</Button>
 	</Step>;
