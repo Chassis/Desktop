@@ -14,9 +14,9 @@ import './App.css';
 
 class App extends Component {
 	render() {
-		const { dispatch, /*installed*/ } = this.props;
+		const { dispatch, installer } = this.props;
 		const { modal } = this.props.ui;
-		const installed = true;
+		const installed = installer.installed.chassis;
 
 		let modalComponent = null;
 		const onDismiss = () => dispatch(hideModal());

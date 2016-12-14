@@ -22,7 +22,7 @@ export default store => {
 	window.keyHandler = new Keys();
 	window.keyHandler.listen( store );
 
-	if ( false && ! state.installer.installed.chassis ) {
+	if ( ! state.installer.installed.chassis ) {
 		// Search for installed applications.
 		which( 'vagrant', err => {
 			store.dispatch( actions.install.setStatus( 'vagrant', !err ) );
