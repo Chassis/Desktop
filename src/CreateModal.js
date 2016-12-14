@@ -14,7 +14,6 @@ class CreateModal extends React.Component {
 	constructor(props) {
 		super(props);
 
-		console.log('constructing create modal');
 		this.state = {
 			step: 0,
 			name: null,
