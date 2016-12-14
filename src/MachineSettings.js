@@ -22,7 +22,7 @@ export default class MachineSettings extends React.Component {
 	}
 
 	render() {
-		const { changes, machine, onChange } = this.props;
+		const { changes, machine, onChange, onDelete } = this.props;
 		const config = { ...machine.config, ...changes };
 
 		return <form className="MachineSettings">
@@ -82,8 +82,8 @@ export default class MachineSettings extends React.Component {
 				</div>
 				*/}
 			</FormTable>
-			<Button icon="pencil">Edit <code>config.local.yaml</code> in your editor</Button>
-			<Button icon="trash">Remove this machine</Button>
+			{/*<Button icon="pencil">Edit <code>config.local.yaml</code> in your editor</Button>*/}
+			<Button icon="trash" onClick={ onDelete }>Remove this machine</Button>
 		</form>;
 	}
 }

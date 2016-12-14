@@ -168,6 +168,7 @@ export default class MachineItem extends React.Component {
 						changes={ nextConfig.config }
 						machine={ machine }
 						onChange={ config => this.onEdit({ config }) }
+						onDelete={ props.onDelete }
 						onDismiss={ () => this.onDismiss() }
 						onSave={ () => this.onSave() }
 					/>

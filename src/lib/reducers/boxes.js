@@ -32,6 +32,9 @@ export default function boxes(state = [], action) {
 				return { ...box, ...action.data };
 			});
 
+		case actions.REMOVE_BOX:
+			return state.filter( box => box.path !== action.machine.path );
+
 		default:
 			return state;
 	}

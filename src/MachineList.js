@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { deselectBox, finishEditingBox, runCommand, selectBox, showModal, startEditingBox, saveBoxChanges, updateBoxStatus } from './lib/actions';
+import { deselectBox, finishEditingBox, removeBox, runCommand, selectBox, showModal, startEditingBox, saveBoxChanges, updateBoxStatus } from './lib/actions';
 import Button from './Button';
 import MachineItem from './MachineItem';
 
@@ -24,6 +24,7 @@ class MachineList extends React.Component {
 					machine={ machine }
 					selected={ selected === machine.path }
 					terminal={ terminal[ machine.path ] || "" }
+					onDelete={ () => dispatch( removeBox( machine ) ) }
 					onDeselect={ () => dispatch(deselectBox()) }
 					onStartEditing={ () => dispatch(startEditingBox())}
 					onFinishEditing={ () => dispatch(finishEditingBox()) }

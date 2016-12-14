@@ -13,6 +13,7 @@ export const ADD_BOX = 'ADD_BOX';
 export const UPDATE_BOX = 'UPDATE_BOX';
 export const UPDATE_BOX_STATUS = 'UPDATE_BOX_STATUS';
 export const SELECT_BOX = 'SELECT_BOX';
+export const REMOVE_BOX = 'REMOVE_BOX';
 export const SET_EDITING = 'SET_EDITING';
 export const META_KEY_DOWN = 'META_KEY_DOWN';
 export const META_KEY_UP = 'META_KEY_UP';
@@ -31,6 +32,10 @@ export function createBox(name, path) {
 
 export function updateBox(path, data) {
 	return { type: UPDATE_BOX, path, data };
+}
+
+export function removeBox(machine) {
+	return { type: REMOVE_BOX, machine };
 }
 
 export function selectBox(path) {
