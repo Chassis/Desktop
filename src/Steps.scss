@@ -1,0 +1,49 @@
+.Steps {
+	flex-grow: 1;
+	display: flex;
+	font-size: 0.9rem;
+	line-height: 1.3;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.Steps > li {
+	width: 100%;
+	flex-shrink: 0;
+	padding: 0 1rem 1rem;
+
+	position: relative;
+	padding-bottom: 40px;
+}
+
+.Steps > li:last-child {
+	margin-right: none;
+}
+
+@mixin step-transition($from, $to) {
+	transition: transform 800ms;
+	transform: translatex($from);
+
+	&-active {
+		transform: translatex($to);
+	}
+}
+
+.Steps .step-next-enter {
+	@include step-transition(100%, 0);
+}
+
+.Steps .step-next-leave {
+	position: absolute;
+	@include step-transition(0, -100%);
+}
+
+.Steps .step-back-enter {
+	@include step-transition(-100%, 0);
+}
+
+.Steps .step-back-leave {
+	position: absolute;
+	@include step-transition(0, 100%);
+}
