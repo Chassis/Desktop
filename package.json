@@ -55,6 +55,7 @@
     "electron": "^1.4.12",
     "font-awesome": "^4.6.3",
     "html-entities": "^1.2.0",
+    "is-equal": "^1.5.3",
     "js-yaml": "^3.7.0",
     "node-sass": "^3.10.1",
     "plist": "^2.0.1",

@@ -1,3 +1,4 @@
+import isEqual from 'is-equal';
 import React from 'react';
 
 import formatPath from './lib/formatPath';
@@ -14,6 +15,8 @@ const eachObject = (obj, callback) => {
 	});
 };
 
+const empty = obj => Object.keys( obj ).length === 0;
+
 export default class MachineItem extends React.Component {
 	constructor(props) {
 		super(props);
@@ -29,6 +32,34 @@ export default class MachineItem extends React.Component {
 		if ( ! nextProps.selected && this.state.editing ) {
 			this.onDismiss();
 		}
+	}
+
+	getChanges() {
+		const { nextConfig } = this.state;
+		const { config } = this.props.machine;
+
+		let nextMachine = {};
+		console.log( nextConfig, config );
+
+		if (nextConfig.name !== this.props.machine.name) {
+			nextMachine.name = nextConfig.name;
+		}
+
+		// Filter out any values that match existing.
+		let changes = {};
+		eachObject( nextConfig.config, (value, key) => {
+			if ( ! ( key in config ) || isEqual( value, config[key] ) ) {
+				return;
+			}
+
+			changes[key] = value;
+		});
+
+		if ( ! empty( changes ) ) {
+			nextMachine.config = changes;
+		}
+
+		return nextMachine;
 	}
 
 	onDismiss() {
@@ -50,33 +81,12 @@ export default class MachineItem extends React.Component {
 	}
 
 	onSave() {
-		const { nextConfig } = this.state;
-		const { config } = this.props.machine;
+		const nextMachine = this.getChanges();
 
-		let nextMachine = {};
-		console.log( nextConfig, config );
-
-		if (nextConfig.name !== this.props.machine.name) {
-			nextMachine.name = nextConfig.name;
-		}
-
-		// Filter out any values that match existing.
-		let changes = {};
-		eachObject( nextConfig.config, (value, key) => {
-			if ( ! ( key in config ) || value === config[key]) {
-				return;
-			}
-
-			changes[key] = value;
-		});
-
-		if ( Object.keys(changes).length > 0 ) {
-			nextMachine.config = changes;
-		}
-
-		if ( Object.keys(nextMachine).length > 0 ) {
+		if ( ! empty( nextMachine ) ) {
 			this.props.onSave( nextMachine );
 		}
+
 		this.onDismiss();
 	}
 
