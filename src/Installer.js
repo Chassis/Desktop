@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import './Installer.css';
 
+import { setStatus } from './lib/actions/install';
 import Chassis from './Installer/Chassis';
 import Downloads from './Installer/Downloads';
 import ImportBoxes from './Installer/ImportBoxes';
@@ -23,6 +24,10 @@ class Installer extends React.Component {
 		this.setState( state => ({ step: state.step + 1 }) );
 	}
 
+	onFinish() {
+		this.props.dispatch( setStatus( 'chassis', true ) );
+	}
+
 	render() {
 		const { vagrant } = this.props;
 
@@ -38,7 +43,7 @@ class Installer extends React.Component {
 					/>
 				: null }
 
-				<Chassis />
+				<Ready onNext={() => this.onFinish()}/>
 			</Steps>
 		</div>;
 	}
