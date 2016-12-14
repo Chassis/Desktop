@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { addBox, loadConfig } from './lib/actions';
-import Confirm from './CreateModal/Confirm';
+import Config from './CreateModal/Config';
 import Type, { TYPES } from './CreateModal/Type';
 import Steps from './Steps';
 
@@ -67,7 +67,7 @@ class CreateModal extends React.Component {
 					onDismiss={ this.props.onDismiss }
 					onSelect={ (...args) => this.onSelect(...args) }
 				/>
-				<Confirm
+				<Config
 					name={ this.state.name }
 					path={ this.state.path }
 					type={ this.state.type }
