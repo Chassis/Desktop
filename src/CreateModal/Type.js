@@ -2,6 +2,7 @@ import React from 'react';
 import { remote } from 'electron';
 
 import Button from '../Button';
+import KeyHandler from '../KeyHandler';
 import Icon from '../Icon';
 import Step from '../Step';
 
@@ -65,6 +66,7 @@ export default class Type extends React.Component {
 			<ul className="create-type">
 				<li>
 					<a onClick={ e => { e.preventDefault(); this.handleSelectCreate() } }>
+						<KeyHandler shortcut="cmd+1" onTrigger={ () => this.handleSelectCreate() } />
 						<Icon type="plus" />
 						<div>
 							<p className="name">Create new box</p>
@@ -74,6 +76,7 @@ export default class Type extends React.Component {
 				</li>
 				<li>
 					<a onClick={ e => { e.preventDefault(); this.handleSelectRetrofit() } }>
+						<KeyHandler shortcut="cmd+2" onTrigger={ () => this.handleSelectRetrofit() } />
 						<Icon type="wrench" />
 						<div>
 							<p className="name">Add Chassis to existing project</p>
@@ -83,6 +86,7 @@ export default class Type extends React.Component {
 				</li>
 				<li>
 					<a onClick={ e => { e.preventDefault(); this.handleSelectImport() } }>
+						<KeyHandler shortcut="cmd+3" onTrigger={ () => this.handleSelectImport() } />
 						<Icon type="download" />
 						<div>
 							<p className="name">Add existing Chassis box</p>
