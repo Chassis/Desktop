@@ -22,7 +22,7 @@
 }
 
 @mixin step-transition($from, $to) {
-	transition: transform 800ms;
+	transition: transform 700ms;
 	transform: translatex($from);
 
 	&-active {
