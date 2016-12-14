@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { deselectBox, finishEditingBox, removeBox, runCommand, selectBox, showModal, startEditingBox, saveBoxChanges, updateBoxStatus } from './lib/actions';
+import { REMOVE_BOX, deselectBox, finishEditingBox, removeBox, runCommand, selectBox, showModal, startEditingBox, saveBoxChanges, updateBoxStatus } from './lib/actions';
 import Button from './Button';
 import MachineItem from './MachineItem';
 
@@ -15,6 +15,16 @@ class MachineList extends React.Component {
 		const selectedIndex = boxes.findIndex( box => selected === box.path );
 
 		return <div className="MachineList">
+			{ ui.undo && ui.undo.type === REMOVE_BOX ?
+				<div className="undo">
+					<p>Box removed.
+						<Button
+							onClick={ () => dispatch( ui.undo.action ) }
+						>Undo</Button>
+					</p>
+				</div>
+			: null }
+
 			{ boxes.map( (machine, index) =>
 				<MachineItem
 					key={ machine.path }

@@ -18,6 +18,21 @@ export default function ui(state = {}, action) {
 		case actions.SET_EDITING:
 			return { ...state, editing: action.editing };
 
+		case actions.REMOVE_BOX:
+			return {
+				...state,
+				selectedBox: null,
+				editing: false,
+				undo: {
+					type: actions.REMOVE_BOX,
+					action: { type: actions.ADD_BOX, machine: action.machine },
+				}
+			};
+
+		case actions.ADD_BOX:
+			// Clear undo.
+			return { ...state, undo: null };
+
 		default:
 			return state;
 	}

@@ -22,6 +22,7 @@ export const DEFAULT_STATE = {
 	ui: {
 		editing: false,
 		modal: 'install',
+		undo: null,
 	},
 };
 

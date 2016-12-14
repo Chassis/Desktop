@@ -2,7 +2,7 @@
 	background: #fff;
 }
 
-.MachineList .empty-message {
+.MachineList .empty-message, .MachineList .undo {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
