@@ -9,6 +9,9 @@ export default props => {
 	if (props.light) {
 		classes.push("light");
 	}
+	if (props.noborder) {
+		classes.push("noborder");
+	}
 	if (props.tiny) {
 		classes.push("tiny");
 	}

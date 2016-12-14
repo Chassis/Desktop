@@ -6,6 +6,7 @@ import './Installer.css';
 import Chassis from './Installer/Chassis';
 import Downloads from './Installer/Downloads';
 import ImportBoxes from './Installer/ImportBoxes';
+import Ready from './Installer/Ready';
 import Steps from './Steps';
 import Welcome from './Installer/Welcome';
 

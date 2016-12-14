@@ -18,6 +18,7 @@ export default class Header extends React.Component {
 				<Button
 					icon="bullhorn"
 					light
+					noborder
 					onClick={ () => openBrowser( 'https://github.com' ) }
 				>
 					Feedback
@@ -25,6 +26,7 @@ export default class Header extends React.Component {
 				<Button
 					icon="gear"
 					light
+					noborder
 					shortcut="Cmd+,"
 					onClick={ onShowSettings }
 				>
@@ -33,6 +35,7 @@ export default class Header extends React.Component {
 				<Button
 					icon="plus"
 					light
+					noborder
 					shortcut="Cmd+N"
 					onClick={ onShowCreate }
 				>
