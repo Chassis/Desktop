@@ -49,6 +49,6 @@ export default props => {
 		</FormTable>
 
 		<Button icon="arrow-left" light onClick={ props.onBack }>Back</Button>
-		<Button light onClick={ props.onSubmit }>Create</Button>
+		<Button icon="plus-circle" light onClick={ props.onSubmit }>Create</Button>
 	</Step>;
 };
