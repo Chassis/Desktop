@@ -6,8 +6,6 @@
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-
-	transition: 500ms transform;
 }
 
 .Steps > li {
@@ -21,4 +19,23 @@
 
 .Steps > li:last-child {
 	margin-right: none;
+}
+
+.Steps .step-next-enter {
+	transition: transform 700ms;
+	transform: translatex(100%);
+}
+
+.Steps .step-next-enter-active {
+	transform: translatex(0);
+}
+
+.Steps .step-next-leave {
+	transition: transform 700ms;
+	transform: translatex(0);
+	position: absolute;
+}
+
+.Steps .step-next-leave-active {
+	transform: translatex(-100%);
 }
