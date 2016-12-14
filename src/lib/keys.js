@@ -118,5 +118,8 @@ export default class Keys {
 				store.dispatch({ type: actions.META_KEY_UP });
 			}
 		});
+		window.addEventListener( 'blur', e => {
+			store.dispatch({ type: actions.WINDOW_BLUR });
+		});
 	}
 }

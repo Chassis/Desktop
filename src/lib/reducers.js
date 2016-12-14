@@ -65,6 +65,7 @@ const ui = (state = {}, action) => {
 		case actions.META_KEY_DOWN:
 			return { ...state, showKeys: true };
 
+		case actions.WINDOW_BLUR:
 		case actions.META_KEY_UP:
 			return { ...state, showKeys: false };
 

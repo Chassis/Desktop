@@ -16,6 +16,7 @@ export const SELECT_BOX = 'SELECT_BOX';
 export const SET_EDITING = 'SET_EDITING';
 export const META_KEY_DOWN = 'META_KEY_DOWN';
 export const META_KEY_UP = 'META_KEY_UP';
+export const WINDOW_BLUR = 'WINDOW_BLUR';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const SET_CREATE_MODAL_STEP = 'SET_CREATE_MODAL_STEP';
 
