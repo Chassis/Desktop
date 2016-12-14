@@ -19,6 +19,7 @@ export const META_KEY_UP = 'META_KEY_UP';
 export const WINDOW_BLUR = 'WINDOW_BLUR';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const SET_CREATE_MODAL_STEP = 'SET_CREATE_MODAL_STEP';
+export const RESET = 'RESET';
 
 export function addBox(name, path) {
 	return { type: ADD_BOX, name, path };
@@ -70,4 +71,8 @@ export function hideModal() {
 
 export function setCreateModalStep(step) {
 
+}
+
+export function reset() {
+	return { type: RESET };
 }

@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 import reducers from './reducers';
 
-const DEFAULT_STATE = {
+export const DEFAULT_STATE = {
 	boxes: [],
 	installer: {
 		installed: {
