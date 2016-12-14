@@ -38,7 +38,11 @@ export default props => {
 		<FormTable>
 			<label>
 				<div>Name</div>
-				<input type="text" value={ props.name } />
+				<input
+					type="text"
+					value={ props.name }
+					onChange={ e => props.onChange({ name: e.target.value }) }
+				/>
 			</label>
 			<div>
 				<div>Chassis Directory</div>
