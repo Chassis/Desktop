@@ -26,7 +26,7 @@ export default props => {
 			break;
 
 		default:
-			return <p>Unknown type!</p>;
+			return <Step><p>Unknown type!</p></Step>;
 	}
 
 	return <Step>
