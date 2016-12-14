@@ -62,16 +62,11 @@ class CreateModal extends React.Component {
 		return <div className="CreateModal">
 			<header>
 				<h1>Add New Box</h1>
-				<Button
-					icon="times-circle"
-					light
-					shortcut="esc"
-					onClick={ this.props.onDismiss }
-				>Cancel</Button>
 			</header>
 
 			<Steps step={ this.state.step }>
 				<Type
+					onDismiss={ this.props.onDismiss }
 					onSelect={ (...args) => this.onSelect(...args) }
 				/>
 				<Confirm
