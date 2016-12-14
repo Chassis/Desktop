@@ -3,7 +3,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { addBox, loadConfig } from './lib/actions';
-import Button from './Button';
 import Confirm from './CreateModal/Confirm';
 import Name from './CreateModal/Name';
 import Type, { TYPES } from './CreateModal/Type';
