@@ -39,7 +39,6 @@ export default class MachineItem extends React.Component {
 		const { config } = this.props.machine;
 
 		let nextMachine = {};
-		console.log( nextConfig, config );
 
 		if (nextConfig.name !== this.props.machine.name) {
 			nextMachine.name = nextConfig.name;
