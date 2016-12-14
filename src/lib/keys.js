@@ -86,7 +86,7 @@ export default class Keys {
 		}
 		let current = this.handlers[ code.key ];
 		let next = current.filter(item => {
-			return !compare(item, code) && item.id === id
+			return ! ( compare( item, code ) && item.id === id );
 		});
 		this.handlers[code.key] = next;
 		return current !== next;
