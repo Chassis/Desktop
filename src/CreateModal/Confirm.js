@@ -37,6 +37,6 @@ export default props => {
 			{ props.path }
 		</p>
 		<Button light>Cancel</Button>
-		<Button light>Create</Button>
+		<Button light onClick={ props.onSubmit }>Create</Button>
 	</Step>;
 };

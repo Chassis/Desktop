@@ -2,12 +2,12 @@ import { sep } from 'path';
 import React from 'react';
 import {connect} from 'react-redux';
 
+import { addBox, loadConfig } from './lib/actions';
 import Button from './Button';
 import Confirm from './CreateModal/Confirm';
 import Name from './CreateModal/Name';
 import Type, { TYPES } from './CreateModal/Type';
 import Steps from './Steps';
-import {addBox} from './lib/actions';
 
 import './CreateModal.css';
 
@@ -38,21 +38,24 @@ class CreateModal extends React.Component {
 	}
 
 	onSelect(type, path) {
-		const name = nameForPath( path );
-		if (type === TYPES.IMPORT) {
-			// We can skip any crazy behaviour because this is a read-only
-			// operation on the filesystem.
-			this.props.dispatch(addBox(this.state.name, path));
-			this.props.onDismiss();
-			return;
-		}
-
 		this.setState( state => ({
 			step: state.step + 1,
 			type,
-			name,
+			name: nameForPath( path ),
 			path
 		}));
+	}
+
+	onCreate() {
+		const { name, path, type } = this.state;
+		switch ( type ) {
+			case TYPES.IMPORT:
+				this.props.dispatch( addBox( name, path ) );
+				this.props.dispatch( loadConfig( path ) );
+				break;
+		}
+
+		this.props.onDismiss();
 	}
 
 	render() {
@@ -75,6 +78,7 @@ class CreateModal extends React.Component {
 					name={ this.state.name }
 					path={ this.state.path }
 					type={ this.state.type }
+					onSubmit={() => this.onCreate()}
 				/>
 			</Steps>
 		</div>;
