@@ -1,5 +1,6 @@
 import React from 'react';
 
+import openBrowser from './lib/openBrowser';
 import Button from './Button';
 
 import './Header.css';
@@ -14,6 +15,13 @@ export default class Header extends React.Component {
 				<span>Chassis</span>
 			</div>
 			<div className="actions">
+				<Button
+					icon="bullhorn"
+					light
+					onClick={ () => openBrowser( 'https://github.com' ) }
+				>
+					Feedback
+				</Button>
 				<Button
 					icon="gear"
 					light
