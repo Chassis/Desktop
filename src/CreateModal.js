@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 import { addBox, loadConfig } from './lib/actions';
 import Confirm from './CreateModal/Confirm';
-import Name from './CreateModal/Name';
 import Type, { TYPES } from './CreateModal/Type';
 import Steps from './Steps';
 
