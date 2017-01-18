@@ -1,5 +1,6 @@
 import React from 'react';
 import {spawn} from 'child_process';
+import { shell } from 'electron';
 import ansiHTML from 'ansi-html';
 // import {AllHtmlEntities} from 'html-entities';
 
@@ -50,9 +51,7 @@ export default class MachineDetails extends React.Component {
 	}
 
 	onFinder() {
-		spawn('open', ['-R', '.'], {
-			cwd: this.props.machine.path,
-		})
+		shell.showItemInFolder( this.props.machine.path );
 	}
 
 	/*onEditor() {

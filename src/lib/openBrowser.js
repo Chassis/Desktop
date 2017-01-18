@@ -1,3 +1,3 @@
-import { spawn } from 'child_process';
+import { shell } from 'electron';
 
-export default url => spawn( 'open', [ url ] );
+export default url => shell.openExternal( url );
