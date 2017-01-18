@@ -18,11 +18,14 @@ function createWindow() {
 	})
 
 	// and load the index.html of the app.
-	// win.loadURL(`file://${__dirname}/build/index.html`)
-	win.loadURL('http://localhost:3000/')
+	if (process.env.NODE_ENV === 'development') {
+		win.loadURL('http://localhost:3000/')
 
-	// Open the DevTools.
-	win.webContents.openDevTools();
+		// Open the DevTools.
+		win.webContents.openDevTools();
+	} else {
+		win.loadURL(`file://${__dirname}/build/index.html`);
+	}
 
 	// Emitted when the window is closed.
 	win.on('closed', () => {
