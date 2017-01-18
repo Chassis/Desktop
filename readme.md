@@ -28,6 +28,28 @@ npm start
 ```
 
 
+## Building for Release
+
+Release/production builds have two build stages: building JS for release, and building the full application packages.
+
+```sh
+# Build the app scripts
+npm run build
+
+# Verify scripts:
+electron .
+
+# Pack for testing
+npm run pack
+
+# Verify app:
+open "dist/mac/Chassis Desktop.app"
+
+# Pack for distribution (into DMG)
+npm run dist
+```
+
+
 ## License
 
 Chassis Desktop is licensed under the [BSD License](license.md).
