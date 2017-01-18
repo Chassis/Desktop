@@ -155,7 +155,10 @@ class Downloads extends React.Component {
 			{ done ?
 				<p><Button icon="arrow-right" light onClick={ this.props.onNext }>Next</Button></p>
 			:
-				<p className="tip">These will be downloaded to <code>{ formatPath( downloadPath ) }</code>.</p>
+				<div>
+					<p className="tip">These will be downloaded to <code>{ formatPath( downloadPath ) }</code>.</p>
+					<p><Button icon="arrow-right" light tiny onClick={ this.props.onNext }>Skip</Button></p>
+				</div>
 			}
 		</li>;
 	}
