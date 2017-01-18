@@ -19,7 +19,7 @@ export default class Header extends React.Component {
 					icon="bullhorn"
 					light
 					noborder
-					onClick={ () => openBrowser( 'https://github.com' ) }
+					onClick={ () => openBrowser( 'https://github.com/Chassis/Desktop/issues' ) }
 				>
 					Feedback
 				</Button>
