@@ -1,6 +1,7 @@
 {
   "name": "chassis-desktop",
   "version": "0.1.0",
+  "description": "Manage local WordPress development environments through a handy UI.",
   "private": true,
   "main": "electron.js",
   "devDependencies": {
