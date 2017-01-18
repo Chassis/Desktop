@@ -78,6 +78,10 @@
     "pack": "build --dir",
     "dist": "build"
   },
+  "author": {
+    "name": "Chassis Team",
+    "url": "http://chassis.io/"
+  },
   "jest": {
     "moduleFileExtensions": [
       "jsx",
