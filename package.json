@@ -114,6 +114,13 @@
     "mac": {
       "category": "public.app-category.developer-tools"
     },
+    "files": [
+      "build/**/*",
+      "electron.js"
+    ],
+    "directories": {
+      "buildResources": "resources"
+    },
     "protocols": {
       "name": "Chasis Desktop URL",
       "role": "Viewer",
