@@ -55,7 +55,10 @@ export default class MachineSettings extends React.Component {
 				</div>
 				<label>
 					<div>PHP Version:</div>
-					<select value={ config.php } onChange={ e => onChange({ php: e.target.value }) }>
+					<select
+						value={ config.php === 7 ? '7.0' : config.php }
+						onChange={ e => onChange({ php: e.target.value }) }
+					>
 						<option>5.3</option>
 						<option>5.4</option>
 						<option>5.5</option>
