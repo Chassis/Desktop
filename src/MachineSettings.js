@@ -22,7 +22,7 @@ export default class MachineSettings extends React.Component {
 	}
 
 	render() {
-		const { changes, machine, onChange, onDelete } = this.props;
+		const { changes, machine, onChange, onDelete, onRefresh } = this.props;
 		const config = { ...machine.config, ...changes };
 
 		return <form className="MachineSettings">
@@ -86,7 +86,16 @@ export default class MachineSettings extends React.Component {
 				*/}
 			</FormTable>
 			{/*<Button icon="pencil">Edit <code>config.local.yaml</code> in your editor</Button>*/}
-			<Button icon="trash" onClick={ onDelete }>Remove this machine</Button>
+
+			<div className="machine-actions">
+				<h3>Actions</h3>
+
+				<p><Button icon="refresh" shortcut="cmd+r" onClick={() => onRefresh()}>Refresh details</Button></p>
+				<p className="description">This will refresh config details from the Vagrant and YAML data.</p>
+
+				<p><Button icon="trash" onClick={ onDelete }>Remove this machine</Button></p>
+				<p className="description">This will remove this box from the app. It will not delete any files.</p>
+			</div>
 		</form>;
 	}
 }
