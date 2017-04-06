@@ -13,12 +13,12 @@ import 'font-awesome/css/font-awesome.css';
 import configure from './configure';
 import createStore from './lib/createStore';
 
-let store = createStore();
+const store = createStore();
 
 // Configure window-level handlers.
 configure( store );
 
-let rootEl = document.getElementById('root');
+const rootEl = document.getElementById('root');
 
 const render = Main => {
 	ReactDOM.render(
