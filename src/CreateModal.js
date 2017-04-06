@@ -2,7 +2,7 @@ import { sep } from 'path';
 import React from 'react';
 import {connect} from 'react-redux';
 
-import { addBox, loadConfig } from './lib/actions';
+import { addBox, loadConfig, updateBoxStatus } from './lib/actions';
 import Config from './CreateModal/Config';
 import Type, { TYPES } from './CreateModal/Type';
 import Steps from './Steps';
@@ -45,11 +45,17 @@ class CreateModal extends React.Component {
 	}
 
 	onCreate() {
+		const { dispatch } = this.props;
 		const { name, path, type } = this.state;
 		switch ( type ) {
 			case TYPES.IMPORT:
-				this.props.dispatch( addBox( name, path ) );
-				this.props.dispatch( loadConfig( path ) );
+				// Add, then refresh.
+				dispatch( addBox( name, path ) );
+				dispatch( loadConfig( path ) )
+					.then(() => {
+						console.log('fulfilled');
+						dispatch( updateBoxStatus( path ) )
+					});
 				break;
 		}
 
