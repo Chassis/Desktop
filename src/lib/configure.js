@@ -4,9 +4,9 @@
 import ansiHTML from 'ansi-html';
 import which from 'which';
 
-import * as actions from './lib/actions';
-import { loadAllConfig } from './lib/actions/loadConfig';
-import Keys from './lib/keys';
+import * as actions from './actions';
+import { loadAllConfig } from './actions/loadConfig';
+import Keys from './keys';
 
 // Refresh every 10 seconds.
 const REFRESH_INTERVAL = 10000;

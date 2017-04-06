@@ -10,7 +10,7 @@ import Root from './Root';
 import 'font-awesome/css/font-awesome.css';
 
 // Some modules rely on global state, which needs to be configured.
-import configure from './configure';
+import configure from './lib/configure';
 import createStore from './lib/createStore';
 
 const store = createStore();
