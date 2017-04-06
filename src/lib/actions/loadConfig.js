@@ -60,7 +60,7 @@ export default function loadConfig(machinePath) {
 			'content/config.local.yaml',
 		].map( configFile => loadFile( path.join( machinePath, configFile ) ) );
 
-		Promise.all( promises ).then( parts => {
+		return Promise.all( promises ).then( parts => {
 			let config = parts.reduce( ( carry, value ) => ({ ...carry, ...value }), {} );
 			dispatch( updateBox( machinePath, { config } ) );
 		});
