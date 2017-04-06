@@ -6,6 +6,8 @@ import Button from './Button';
 import Icon from './Icon';
 import FormTable from './FormTable';
 
+import './Settings.css';
+
 class Settings extends React.Component {
 	constructor(props) {
 		super(props);

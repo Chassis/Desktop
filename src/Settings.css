@@ -1,3 +1,9 @@
+.Settings {
+	padding: 0 2rem;
+}
 .Settings > .FormTable {
 	width: 100%;
+}
+.Settings p {
+	line-height: 1.5;
 }
