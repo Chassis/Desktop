@@ -57,6 +57,10 @@ class CreateModal extends React.Component {
 						dispatch( updateBoxStatus( path ) )
 					});
 				break;
+
+			default:
+				// No-op.
+				break;
 		}
 
 		this.props.onDismiss();
