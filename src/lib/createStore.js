@@ -37,7 +37,16 @@ export default function createStore() {
 		}
 	}
 
-	let store = createReduxStore( reducers, initialState, applyMiddleware( thunk ) );
+	const middleware = [ thunk ];
+
+	// Debugging utilities.
+	if (process.env.NODE_ENV === 'development') {
+		const createLogger = require( 'redux-logger' );
+		const logger = createLogger();
+		middleware.push( logger );
+	}
+
+	let store = createReduxStore( reducers, initialState, applyMiddleware( ...middleware ) );
 	store.subscribe(() => {
 		let mapper = store => ({ boxes: store.boxes, installer: { installed: store.installer.installed } });
 		localStorage.setItem( 'store', JSON.stringify( mapper( store.getState() ) ) );
