@@ -1,0 +1,16 @@
+@keyframes wave-rotate {
+	0% {
+		transform: rotate(20deg);
+	}
+
+	100% {
+		transform: rotate(50deg);
+	}
+}
+
+.Ready .wave {
+	font-size: 3rem;
+	margin-top: 0;
+
+	animation: wave-rotate 1s linear alternate infinite;
+}
