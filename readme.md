@@ -4,12 +4,9 @@
 	<img src="http://i.imgur.com/G1k2f55.png" width="744" height="298" />
 	<hr />
 	<p>Chassis Desktop is an application to manage <a href="https://github.com/Chassis/Chassis">Chassis</a> development environments, without touching the command line. Create, manage, and configure development environments with a simple UI.</p>
+	<!-- **[Install Chassis Desktop &rarr;](http://chassis.io/)** -->
+	<p>Release builds coming soon. Until then, you'll need to build your own:</p>
 </div>
-
-<!-- **[Install Chassis Desktop &rarr;](http://chassis.io/)** -->
-
-Release builds coming soon. Until then, you'll need to build your own:
-
 
 ## Development
 
