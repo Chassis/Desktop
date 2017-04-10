@@ -3,7 +3,7 @@
 	<p>Local WordPress development made easy.</p>
 	<img src="http://i.imgur.com/G1k2f55.png" width="744" height="298" />
 	<hr />
-	<p markdown="1">Chassis Desktop is an application to manage [Chassis](https://github.com/Chassis/Chassis) development environments, without touching the command line. Create, manage, and configure development environments with a simple UI.</p>
+	<p>Chassis Desktop is an application to manage <a href="https://github.com/Chassis/Chassis">Chassis</a> development environments, without touching the command line. Create, manage, and configure development environments with a simple UI.</p>
 </div>
 
 <!-- **[Install Chassis Desktop &rarr;](http://chassis.io/)** -->
