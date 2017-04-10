@@ -5,7 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Button from '../Button';
-import { addDownloadProgress, resetDownload, setDownloadTotal } from '../lib/actions/install';
+import { addDownloadProgress, resetDownload, setDownloadTotal, setStatus } from '../lib/actions/install';
 import download from '../lib/download';
 import formatPath from '../lib/formatPath';
 import Downloader from './Downloader';
@@ -32,31 +32,34 @@ const apps = {
 };
 
 const runInstaller = (path, pkgName) => {
-	const process = spawn( 'hdiutil', [ 'attach', path, '-plist' ], {
-		cwd: downloadPath,
-	});
-	let data = { stdout: '', stderr: '' };
-	process.stdout.on( 'data', bytes => {
-		data.stdout += bytes;
-	});
-	process.stderr.on( 'data', bytes => {
-		data.stderr += bytes;
-	});
-	process.on('close', code => {
-		if (code !== 0) {
-			console.log( data );
-			console.log( code );
-			throw code;
-		}
+	return new Promise((resolve, reject) => {
+		const process = spawn( 'hdiutil', [ 'attach', path, '-plist' ], {
+			cwd: downloadPath,
+		});
+		let data = { stdout: '', stderr: '' };
+		process.stdout.on( 'data', bytes => {
+			data.stdout += bytes;
+		});
+		process.stderr.on( 'data', bytes => {
+			data.stderr += bytes;
+		});
+		process.on('close', code => {
+			if (code !== 0) {
+				console.log( data );
+				console.log( code );
+				throw code;
+			}
 
-		const obj = plist.parse( data.stdout );
+			const obj = plist.parse( data.stdout );
 
-		// Find mount.
-		const entity = obj['system-entities'].find(obj => obj['content-hint'] === 'Apple_HFS');
-		const mount = entity['mount-point'];
-		const process = spawn( 'open', [ mount + '/' + pkgName ] );
-		process.on( 'close', code => {
-			console.log( path, code );
+			// Find mount.
+			const entity = obj['system-entities'].find(obj => obj['content-hint'] === 'Apple_HFS');
+			const mount = entity['mount-point'];
+			const process = spawn( 'open', [ '-W', mount + '/' + pkgName ] );
+			process.on( 'close', code => {
+				resolve();
+				console.log( path, code );
+			});
 		});
 	});
 }
@@ -84,6 +87,7 @@ class Downloads extends React.Component {
 	}
 
 	render() {
+		const { dispatch } = this.props;
 		const { downloadProgress, downloadTotal, installed } = this.props.installer;
 
 		const downloaded = Object.keys(apps).map(key => downloadProgress[key]).reduce(sum, 0)
@@ -127,7 +131,10 @@ class Downloads extends React.Component {
 							installed={ installed.virtualbox }
 							progress={ downloadProgress.virtualbox }
 							total={ downloadTotal.virtualbox }
-							onInstall={ () => runInstaller('VirtualBox.dmg', 'VirtualBox.pkg')}
+							onInstall={ () => {
+								runInstaller('VirtualBox.dmg', 'VirtualBox.pkg')
+									.then( () => dispatch( setStatus( 'virtualbox', true ) ) )
+							}}
 						/>
 					</div>
 				</li>
@@ -146,7 +153,10 @@ class Downloads extends React.Component {
 							installed={ installed.vagrant }
 							progress={ downloadProgress.vagrant }
 							total={ downloadTotal.vagrant }
-							onInstall={ () => runInstaller('Vagrant.dmg', 'Vagrant.pkg') }
+							onInstall={ () => {
+								runInstaller( 'Vagrant.dmg', 'Vagrant.pkg' )
+									.then( () => dispatch( setStatus( 'vagrant', true ) ) )
+							}}
 						/>
 					</div>
 				</li>
