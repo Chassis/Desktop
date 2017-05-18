@@ -21,6 +21,10 @@
 	padding: 0.2em;
 }
 
+.FormTable > * > select, .FormTable > * > input {
+	width: 100%;
+}
+
 .FormTable .description {
 	font-size: 0.8em;
 	font-style: italic;
