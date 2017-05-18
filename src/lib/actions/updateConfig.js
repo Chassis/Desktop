@@ -21,15 +21,15 @@ export function saveConfig( path, data ) {
 	});
 }
 
-export default function updateConfig( path, changes ) {
+export default function updateConfig( path, machinePath, changes ) {
 	return (dispatch, getStore) => {
 		loadFile( path ).then( existing => {
 			const nextConfig = { ...existing, ...changes };
-			saveConfig( path, nextConfig ).then( () => updateBox( path, { config: nextConfig } ) );
+			saveConfig( path, nextConfig ).then( () => dispatch( updateBox( machinePath, { config: nextConfig } ) ) );
 		});
 	};
 }
 
 export function updateMachineConfig( machinePath, changes ) {
-	return updateConfig( path.join( machinePath, 'config.local.yaml' ), changes );
+	return updateConfig( path.join( machinePath, 'config.local.yaml' ), machinePath, changes );
 }
