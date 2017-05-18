@@ -56,18 +56,3 @@
 .CreateModal .create-type .name {
 	font-weight: bold;
 }
-
-.CreateModal input[type=text] {
-	font-size: 1rem;
-	padding: 0.5rem;
-	background: rgba(0, 0, 0, 0.05);
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
-}
-.CreateModal input[type=text]::placeholder {
-	color: rgba(0, 0, 0, 0.4);
-}
-.CreateModal input[type=text]:focus {
-	outline: 0;
-	border-color: #000;
-}

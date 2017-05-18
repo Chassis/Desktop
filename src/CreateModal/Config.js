@@ -3,6 +3,7 @@ import tildify from 'tildify';
 
 import Button from '../Button';
 import FormTable from '../FormTable';
+import FixedValue from '../Form/FixedValue';
 import Step from '../Step';
 import { TYPES } from './Type';
 
@@ -48,10 +49,10 @@ export default props => {
 				/>
 			</label>
 			<div>
-				<div>Chassis Directory</div>
-				<div style={{ textAlign: "left" }}>
-					<code>{ tildify( props.path ) }</code>
-				</div>
+				<div>Chassis Directory:</div>
+				<FixedValue
+					value={ tildify( props.path ) }
+				/>
 			</div>
 		</FormTable>
 
