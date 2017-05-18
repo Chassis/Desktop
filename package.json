@@ -121,7 +121,7 @@
       "buildResources": "resources"
     },
     "protocols": {
-      "name": "Chasis Desktop URL",
+      "name": "Chassis Desktop URL",
       "role": "Viewer",
       "schemes": [
         "chassis"
