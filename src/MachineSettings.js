@@ -4,8 +4,6 @@ import tildify from 'tildify';
 import Button from './Button';
 import FormTable from './Form/Table';
 import ItemList from './ItemList';
-import RadioList from './RadioList';
-import RadioOption from './RadioOption';
 import FixedValue from './Form/FixedValue';
 
 import './MachineSettings.css';
@@ -21,6 +19,11 @@ export default class MachineSettings extends React.Component {
 		let hosts = (this.state.hosts || this.props.machine.config.hosts).slice();
 		hosts[ index ] = value;
 		this.setState({ hosts });
+	}
+
+	onChangeIP(value) {
+		const ip = value ? value : 'dhcp';
+		this.props.onChange({ ip });
 	}
 
 	render() {
@@ -45,15 +48,12 @@ export default class MachineSettings extends React.Component {
 				</label>
 				<div>
 					<div>IP Address:</div>
-					<RadioList value={ config.ip } onChange={ ip => onChange({ ip }) }>
-						<RadioOption value="dhcp">Auto-Assign</RadioOption>
-						<RadioOption value="manual">
-							<input
-								placeholder="192.168.50.40"
-								type="text"
-							/>
-						</RadioOption>
-					</RadioList>
+					<input
+						placeholder="Auto-assigned"
+						type="text"
+						value={ config.ip === 'dhcp' ? '' : config.ip }
+						onChange={ e => this.onChangeIP( e.target.value ) }
+					/>
 				</div>
 				<label>
 					<div>PHP Version:</div>

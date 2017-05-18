@@ -1,8 +1,0 @@
-.RadioList > label {
-	display: block;
-	margin-bottom: 0.75em;
-}
-
-.RadioList > label > input[type="radio"] {
-	margin-right: 0.5em;
-}
