@@ -1,7 +1,5 @@
 .Modal {
-	text-align: center;
-	background: #29ABE2;
-	color: #fff;
+	background: #fff;
 	position: absolute;
 	z-index: 1;
 	top: 0;

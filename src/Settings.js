@@ -33,12 +33,10 @@ class Settings extends React.Component {
 				<p>
 					<Button
 						icon="bomb"
-						light
 						onClick={() => dispatch(reset())}
 					>Reset Chassis Desktop</Button>
 					<Button
 						icon="times-circle"
-						light
 						onClick={ () => this.setState({ showRealReset: false }) }
 					>Cancel</Button>
 				</p>
@@ -62,13 +60,11 @@ class Settings extends React.Component {
 			<p>
 				<Button
 					icon="times-circle"
-					light
 					shortcut="esc"
 					onClick={ onDismiss }
 				>Cancel</Button>
 				<Button
 					icon="check"
-					light
 					onClick={ onDismiss }
 				>Save</Button>
 			</p>
@@ -76,7 +72,6 @@ class Settings extends React.Component {
 			<p>
 				<Button
 					icon="exclamation-triangle"
-					light
 					onClick={() => this.setState({ showRealReset: true })}
 				>Reset Chassis Desktop</Button>
 			</p>

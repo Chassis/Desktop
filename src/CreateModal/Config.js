@@ -55,6 +55,6 @@ export default props => {
 			</div>
 		</FormTable>
 
-		<Button icon="plus-circle" light onClick={ props.onSubmit }>{ buttonText }</Button>
+		<Button icon="plus-circle" onClick={ props.onSubmit }>{ buttonText }</Button>
 	</Step>;
 };

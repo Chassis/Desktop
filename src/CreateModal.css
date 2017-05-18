@@ -29,13 +29,16 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	border: 1px solid rgba(255, 255, 255, 0.4);
+	background: rgba(41, 171, 226, 0.9);
+	color: #fff;
+	border: 1px solid #fff;
 	border-radius: 4px;
 	padding: 0.5rem;
 }
 
 .CreateModal .create-type a:hover {
-	border-color: #fff;
+	border-color: #000;
+	background: rgba(41, 171, 226, 1.0);
 }
 
 .CreateModal .create-type a > i {
@@ -57,15 +60,14 @@
 .CreateModal input[type=text] {
 	font-size: 1rem;
 	padding: 0.5rem;
-	background: rgba(255, 255, 255, 0.05);
-	color: #fff;
-	border: 1px solid rgba(255, 255, 255, 0.4);
+	background: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
 }
 .CreateModal input[type=text]::placeholder {
-	color: rgba(255, 255, 255, 0.4);
+	color: rgba(0, 0, 0, 0.4);
 }
 .CreateModal input[type=text]:focus {
 	outline: 0;
-	border-color: #fff;
+	border-color: #000;
 }
-
