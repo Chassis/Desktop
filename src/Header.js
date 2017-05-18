@@ -1,52 +1,30 @@
 import React from 'react';
 
-import openBrowser from './lib/openBrowser';
-import Button from './Button';
+import Icon from './Icon';
 
 import './Header.css';
 
 export default class Header extends React.Component {
 	render() {
-		let { onShowCreate, onShowSettings } = this.props;
+		const { children, icon, title } = this.props;
+
+		// `icon` can be an element, an icon type, or null
+		const iconElement = icon ? ( typeof icon === "string" ? <Icon type={ icon } /> : icon ) : null;
 
 		return <div className="Header">
 			<div className="title">
-				<img role="presentation" src="logo.png" />
-				<span>Chassis</span>
+				{ iconElement }
+				<span>{ title }</span>
 			</div>
-			<div className="actions">
-				<Button
-					icon="bullhorn"
-					light
-					noborder
-					onClick={ () => openBrowser( 'https://github.com/Chassis/Desktop/issues' ) }
-				>
-					Feedback
-				</Button>
-				<Button
-					icon="gear"
-					light
-					noborder
-					shortcut="Cmd+,"
-					onClick={ onShowSettings }
-				>
-					Settings
-				</Button>
-				<Button
-					icon="plus"
-					light
-					noborder
-					shortcut="Cmd+N"
-					onClick={ onShowCreate }
-				>
-					Add&hellip;
-				</Button>
-			</div>
+			<div className="actions">{ children }</div>
 		</div>;
 	}
 }
 
 Header.propTypes = {
-	onShowCreate: React.PropTypes.func.isRequired,
-	onShowSettings: React.PropTypes.func.isRequired,
+	icon: React.PropTypes.oneOfType([
+		React.PropTypes.element,
+		React.PropTypes.string
+	]),
+	title: React.PropTypes.string.isRequired,
 };

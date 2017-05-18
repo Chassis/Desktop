@@ -13,14 +13,17 @@
 
 .Header .title {
 	font-size: 1.25rem;
+	min-height: 32px;
 	color: #fff;
 	display: flex;
 	align-items: center;
 }
 
-.Header img {
+.Header > .title > img {
 	height: 32px;
 	vertical-align: middle;
+}
+.Header > .title > img, .Header > .title > .fa {
 	margin-right: 0.5rem;
 }
 

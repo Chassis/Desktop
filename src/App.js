@@ -10,6 +10,9 @@ import MachineList from './MachineList';
 import Modal from './Modal';
 import Settings from './Settings';
 
+import openBrowser from './lib/openBrowser';
+import Button from './Button';
+
 import './App.css';
 
 class App extends Component {
@@ -40,13 +43,37 @@ class App extends Component {
 			modalComponent = <Modal key="install"><Installer onDismiss={onDismiss} /></Modal>;
 		}
 
+		const logo = <img role="presentation" src="logo.png" />;
 		return <div className="App">
 			{ installed ?
-				<Header
-					onRefresh={() => dispatch(updateGlobalStatus())}
-					onShowCreate={() => dispatch(showModal('create'))}
-					onShowSettings={() => dispatch(showModal('settings'))}
-				/>
+				<Header icon={ logo } title="Chassis">
+					<Button
+						icon="bullhorn"
+						light
+						noborder
+						onClick={ () => openBrowser( 'https://github.com/Chassis/Desktop/issues' ) }
+					>
+						Feedback
+					</Button>
+					<Button
+						icon="gear"
+						light
+						noborder
+						shortcut="Cmd+,"
+						onClick={ () => dispatch(showModal('settings')) }
+					>
+						Settings
+					</Button>
+					<Button
+						icon="plus"
+						light
+						noborder
+						shortcut="Cmd+N"
+						onClick={ () => dispatch(showModal('create')) }
+					>
+						Add&hellip;
+					</Button>
+				</Header>
 			: null }
 
 			<CSSTransitionGroup
