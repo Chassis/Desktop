@@ -3,7 +3,6 @@ import tildify from 'tildify';
 
 import Button from './Button';
 import FormTable from './Form/Table';
-import ItemList from './ItemList';
 import FixedValue from './Form/FixedValue';
 
 import './MachineSettings.css';
@@ -41,10 +40,15 @@ export default class MachineSettings extends React.Component {
 				</div>
 				<label>
 					<div>Hosts:</div>
-					<ItemList
-						value={ config.hosts }
-						onChange={ hosts => onChange({ hosts }) }
-					/>
+					{ config.hosts.length > 1 ?
+						<FixedValue value="Multiple values" />
+					:
+						<input
+							type="text"
+							value={ config.hosts[0] }
+							onChange={ e => onChange({ hosts: [ e.target.value ] }) }
+						/>
+					}
 				</label>
 				<div>
 					<div>IP Address:</div>
