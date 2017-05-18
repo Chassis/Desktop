@@ -41,7 +41,7 @@ export default props => {
 
 		<FormTable>
 			<label>
-				<div>Name</div>
+				<div>Name:</div>
 				<input
 					type="text"
 					value={ props.name }

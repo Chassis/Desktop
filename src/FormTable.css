@@ -2,14 +2,18 @@
 	display: flex;
 	margin-bottom: 1rem;
 	align-items: baseline;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 14px;
 }
 
 .FormTable > * > :first-child {
 	display: block;
-	width: 10rem;
+	width: 35%;
 	flex-shrink: 0;
 	text-align: right;
-	margin-right: 2rem;
+	margin-right: 1rem;
 }
 
 .FormTable input[type="text"] {
