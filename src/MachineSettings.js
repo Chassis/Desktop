@@ -1,10 +1,12 @@
 import React from 'react';
+import tildify from 'tildify';
 
 import Button from './Button';
 import FormTable from './FormTable';
 import ItemList from './ItemList';
 import RadioList from './RadioList';
 import RadioOption from './RadioOption';
+import FixedValue from './Form/FixedValue';
 
 import './MachineSettings.css';
 
@@ -30,7 +32,7 @@ export default class MachineSettings extends React.Component {
 				<div>
 					<div>Path:</div>
 					<div>
-						<code>{ machine.path }</code>
+						<FixedValue value={ tildify( machine.path ) } />
 						<p className="description">Paths cannot be changed once added.</p>
 					</div>
 				</div>
