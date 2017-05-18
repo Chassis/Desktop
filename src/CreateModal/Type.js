@@ -95,14 +95,6 @@ export default class Type extends React.Component {
 					</a>
 				</li>
 			</ul>
-			<p>
-				<Button
-					icon="times-circle"
-					light
-					shortcut="esc"
-					onClick={ this.props.onDismiss }
-				>Cancel</Button>
-			</p>
 		</Step>;
 	}
 }

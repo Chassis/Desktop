@@ -4,10 +4,8 @@
 	align-items: center;
 }
 
-.CreateModal header {
-	// display: flex;
-	// justify-content: center;
-	text-align: center;
+.CreateModal .Header {
+	align-self: stretch;
 }
 
 .CreateModal header .Button {
@@ -71,6 +69,3 @@
 	border-color: #fff;
 }
 
-.CreateModal .actions {
-	margin-top: 1rem;
-}

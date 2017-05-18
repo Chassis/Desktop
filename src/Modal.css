@@ -14,10 +14,6 @@
 	flex-direction: column;
 }
 
-.Modal header {
-	padding: 0.6rem;
-}
-
 .Modal h1 {
 	font-size: 1.5rem;
 }

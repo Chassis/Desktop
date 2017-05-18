@@ -1,5 +1,5 @@
-.Settings {
-	padding: 0 2rem;
+.Settings .Header {
+	margin-bottom: 2rem;
 }
 .Settings > .FormTable {
 	width: 100%;

@@ -5,6 +5,7 @@ import { reset } from './lib/actions';
 import Button from './Button';
 import Icon from './Icon';
 import FormTable from './FormTable';
+import Header from './Header';
 
 import './Settings.css';
 
@@ -23,9 +24,7 @@ class Settings extends React.Component {
 
 		if ( showRealReset ) {
 			return <div className="Settings">
-				<header>
-					<h2><Icon type="exclamation-triangle" /> Reset Chassis Desktop</h2>
-				</header>
+				<Header icon="exclamation-triangle" title="Reset Chassis Desktop" />
 
 				<p>You're about to reset Chassis Desktop, and will need to run through the installer again.</p>
 				<p>This <strong>will</strong> remove all settings from the app, including boxes you've added.</p>
@@ -47,9 +46,7 @@ class Settings extends React.Component {
 		}
 
 		return <div className="Settings">
-			<header>
-				<h1>Settings</h1>
-			</header>
+			<Header icon="gear" title="Settings" />
 
 			<FormTable>
 				<label>

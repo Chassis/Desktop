@@ -3,7 +3,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { addBox, loadConfig, updateBoxStatus } from './lib/actions';
+import Button from './Button';
 import Config from './CreateModal/Config';
+import Header from './Header';
 import Type, { TYPES } from './CreateModal/Type';
 import Steps from './Steps';
 
@@ -67,10 +69,25 @@ class CreateModal extends React.Component {
 	}
 
 	render() {
+		const { step } = this.state;
+		const onBack = () => this.setState( state => ({ step: state.step - 1 }) );
+
 		return <div className="CreateModal">
-			<header>
-				<h1>Add New Box</h1>
-			</header>
+			<Header icon="plus" title="Add New Box">
+				{ step > 1 ?
+					<Button
+						icon="arrow-left"
+						shortcut="esc"
+						onClick={ onBack }
+					>Back</Button>
+				:
+					<Button
+						icon="times-circle"
+						shortcut="esc"
+						onClick={ this.props.onDismiss }
+					>Cancel</Button>
+				}
+			</Header>
 
 			<Steps step={ this.state.step }>
 				<Type
@@ -83,7 +100,6 @@ class CreateModal extends React.Component {
 					name={ this.state.name }
 					path={ this.state.path }
 					type={ this.state.type }
-					onBack={ () => this.setState( state => ({ step: state.step - 1 }) ) }
 					onChange={ data => this.setState( data ) }
 					onSubmit={() => this.onCreate()}
 				/>
