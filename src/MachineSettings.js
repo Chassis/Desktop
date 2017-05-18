@@ -2,7 +2,7 @@ import React from 'react';
 import tildify from 'tildify';
 
 import Button from './Button';
-import FormTable from './FormTable';
+import FormTable from './Form/Table';
 import ItemList from './ItemList';
 import RadioList from './RadioList';
 import RadioOption from './RadioOption';
