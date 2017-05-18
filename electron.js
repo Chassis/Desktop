@@ -1,6 +1,12 @@
 const { app, BrowserWindow, protocol } = require('electron');
 const path = require('path');
 
+if (process.env.NODE_ENV === 'development') {
+	require('electron-debug')({
+		showDevTools: 'undocked',
+	});
+}
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -21,9 +27,6 @@ function createWindow() {
 	// and load the index.html of the app.
 	if (process.env.NODE_ENV === 'development') {
 		win.loadURL('http://localhost:3000/')
-
-		// Open the DevTools.
-		win.webContents.openDevTools();
 	} else {
 		win.loadURL(`file://${__dirname}/build/index.html`);
 	}
