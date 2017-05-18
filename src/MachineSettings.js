@@ -69,15 +69,18 @@ export default class MachineSettings extends React.Component {
 						<option>7.1</option>
 					</select>
 				</label>
-				<label>
-					<div>Use multisite?</div>
-					<input
-						checked={ config.multisite }
-						type="checkbox"
-						value={ true }
-						onChange={ e => onChange({ multisite: !config.multisite }) }
-					/>
-				</label>
+				<div className="no-label">
+					<div>
+						<label><input
+							checked={ config.multisite }
+							type="checkbox"
+							value={ true }
+							onChange={ e => onChange({ multisite: !config.multisite }) }
+						/>
+						Use multisite?</label>
+						<p className="description">Only subdirectory-based multisite is currently supported.</p>
+					</div>
+				</div>
 				{/*
 				<div>
 					<div>Extensions:</div>

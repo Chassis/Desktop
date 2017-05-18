@@ -8,7 +8,15 @@
 	font-size: 14px;
 }
 
-.FormTable > * > :first-child {
+.FormTable > .no-label > :first-child {
+	display: block;
+	margin-left: 35%;
+	padding-left: 1rem;
+	width: 65%;
+	flex-shrink: 0;
+}
+
+.FormTable > *:not(.no-label) > :first-child {
 	display: block;
 	width: 35%;
 	flex-shrink: 0;
