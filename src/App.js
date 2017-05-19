@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { connect } from 'react-redux';
 
-import { hideModal, showModal, updateGlobalStatus } from './lib/actions';
+import { hideModal, showModal } from './lib/actions';
 import CreateModal from './CreateModal';
 import Header from './Header';
 import Installer from './Installer';

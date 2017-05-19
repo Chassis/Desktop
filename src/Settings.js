@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import { reset } from './lib/actions';
 import Button from './Button';
-import Icon from './Icon';
 import FormTable from './Form/Table';
 import Header from './Header';
 

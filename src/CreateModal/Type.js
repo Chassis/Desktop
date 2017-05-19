@@ -1,7 +1,6 @@
 import React from 'react';
 import { remote } from 'electron';
 
-import Button from '../Button';
 import KeyHandler from '../KeyHandler';
 import Icon from '../Icon';
 import Step from '../Step';
