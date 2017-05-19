@@ -22,6 +22,7 @@ function createWindow() {
 		center: true,
 		title: 'Chassis',
 		titleBarStyle: 'hidden',
+		show: false,
 	})
 
 	// and load the index.html of the app.
@@ -30,6 +31,8 @@ function createWindow() {
 	} else {
 		win.loadURL(`file://${__dirname}/build/index.html`);
 	}
+
+	win.on('ready-to-show', () => win.show())
 
 	// Emitted when the window is closed.
 	win.on('closed', () => {
