@@ -6,6 +6,8 @@ import KeyHandler from '../KeyHandler';
 import Icon from '../Icon';
 import Step from '../Step';
 
+import './Type.css';
+
 const dialog = remote.dialog;
 
 export const TYPES = {
@@ -61,7 +63,7 @@ export default class Type extends React.Component {
 	}
 
 	render() {
-		return <Step>
+		return <Step className="Type">
 			<h2>Select Your Project Type</h2>
 			<ul className="create-type">
 				<li>
