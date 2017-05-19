@@ -6,39 +6,31 @@
 	line-height: 1.4;
 }
 
-.Type .create-type li {
-	margin-bottom: 1rem;
-}
-
 .Type .create-type a {
 	position: relative;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	background: rgba(41, 171, 226, 0.9);
-	color: #fff;
-	border: 1px solid #fff;
-	border-radius: 4px;
 	padding: 0.5rem;
+	margin: 0 -0.5rem;
 }
 
-.Type .create-type a:hover {
-	border-color: #000;
-	background: rgba(41, 171, 226, 1.0);
+.Type .create-type a:active {
+	background: rgba(0, 0, 0, 0.05);
 }
 
 .Type .create-type a > i {
 	font-size: 2rem;
 	width: 2rem;
 	text-align: center;
-	margin-left: 0.5rem;
 	margin-right: 1rem;
+	color: #29ABE2;
 }
 
 .Type .create-type p {
-	margin: 0 0 0.25rem;
+	margin: 0 0 0.2rem;
 }
 
 .Type .create-type .name {
-	font-weight: bold;
+	font-weight: 600;
 }
