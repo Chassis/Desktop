@@ -1,6 +1,6 @@
 .Installer {
 	text-align: center;
-	background: #29ABE2;
+	background: var(--color-primary);
 	color: #fff;
 	display: flex;
 	flex-direction: column;

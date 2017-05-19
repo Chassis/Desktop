@@ -23,12 +23,22 @@
 }
 
 .ImportBoxes .box-list li:nth-child(2n) {
-	background: rgba(41, 171, 226, 0.1);
+	background: rgba(
+		var(--color-primary-red),
+		var(--color-primary-green),
+		var(--color-primary-blue),
+		0.1
+	);
 }
 
 .ImportBoxes .box-list label:hover {
 	background: rgba(255, 255, 255, 0.2);
-	background: rgba(41, 171, 226, 0.2);
+	background: rgba(
+		var(--color-primary-red),
+		var(--color-primary-green),
+		var(--color-primary-blue),
+		0.2
+	);
 }
 
 .ImportBoxes input[type=checkbox] {

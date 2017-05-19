@@ -9,8 +9,13 @@
 	border-radius: 4px;
 	margin-left: 0.5rem;
 
-	color: #29ABE2;
-	border-color: rgba(41, 171, 226, 0.4);
+	color: var(--color-primary);
+	border-color: rgba(
+		var(--color-primary-red),
+		var(--color-primary-green),
+		var(--color-primary-blue),
+		0.4
+	);
 }
 
 .Button:first-child {
@@ -33,7 +38,12 @@
 }
 
 .Button:hover {
-	background: rgba(41, 171, 226, 0.1);
+	background: rgba(
+		var(--color-primary-red),
+		var(--color-primary-green),
+		var(--color-primary-blue),
+		0.1
+	);
 }
 
 .Button.light:hover {

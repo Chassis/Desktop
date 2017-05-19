@@ -24,7 +24,7 @@
 	width: 2rem;
 	text-align: center;
 	margin-right: 1rem;
-	color: #29ABE2;
+	color: var(--color-primary);
 }
 
 .Type .create-type p {
