@@ -34,6 +34,11 @@ function createWindow() {
 
 	win.on('ready-to-show', () => win.show())
 
+	win.webContents.on('will-navigate', (e, url) => {
+		e.preventDefault()
+		shell.openExternal(url)
+	})
+
 	// Emitted when the window is closed.
 	win.on('closed', () => {
 		// Dereference the window object, usually you would store windows
