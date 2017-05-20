@@ -30,7 +30,7 @@ export default class About extends React.Component {
 						{' '}
 						<a href="https://github.com/Chassis/Desktop/releases">View releases</a>
 					</p>
-					{ update ? (
+					{ /*update ? (
 						update === 'download' ? (
 							<p className="update" onClick={() => this.setState({ update: 'ready' })}>
 								<Icon type="spinner" /> Downloading update&hellip;
@@ -46,7 +46,7 @@ export default class About extends React.Component {
 								Check for Updates
 							</button>
 						</p>
-					)}
+					)*/}
 					<p className="credits">
 						Chassis is produced by {' '}
 						<a href="https://bronsonquick.com.au/">Bronson Quick</a>, {' '}
