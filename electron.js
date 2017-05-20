@@ -1,4 +1,4 @@
-const { app, BrowserWindow, protocol } = require('electron');
+const { app, BrowserWindow, Menu, protocol, shell } = require('electron');
 const path = require('path');
 
 if (process.env.NODE_ENV === 'development') {
@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+let win, aboutWindow
 
 function createWindow() {
 	// Create the browser window.
@@ -43,6 +43,30 @@ function createWindow() {
 	})
 }
 
+function createAboutWindow() {
+	aboutWindow = new BrowserWindow({
+		width: 648,
+		height: 320,
+		resizable: false,
+		center: true,
+		vibrancy: 'light',
+		// Non-Mac:
+		//backgroundColor: '#ececec',
+		title: 'About Chassis Desktop',
+		titleBarStyle: 'hidden-inset',
+		show: false,
+	})
+
+	aboutWindow.loadURL('http://localhost:3000/about.html')
+
+	aboutWindow.on('ready-to-show', () => aboutWindow.show())
+
+	aboutWindow.webContents.on('will-navigate', (e, url) => {
+		e.preventDefault()
+		shell.openExternal(url)
+	})
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -62,6 +86,46 @@ app.on('ready', () => {
 	);
 
 	createWindow();
+
+	const mainMenu = Menu.buildFromTemplate([
+		{
+			label: app.getName(),
+			submenu: [
+				{
+					label: 'About ' + app.getName(),
+					click: () => createAboutWindow(),
+				},
+				{type: 'separator'},
+				{role: 'services', submenu: []},
+				{type: 'separator'},
+				{role: 'hide'},
+				{role: 'hideothers'},
+				{role: 'unhide'},
+				{type: 'separator'},
+				{role: 'quit'}
+			]
+		},
+		{
+			role: 'window',
+			submenu: [
+				{role: 'minimize'},
+				{role: 'close'},
+				{role: 'zoom'},
+				{type: 'separator'},
+				{role: 'front'}
+			]
+		},
+		{
+			role: 'help',
+			submenu: [
+				{
+					label: 'Feedback',
+					click: () => shell.openExternal('https://github.com/Chassis/Desktop/issues'),
+				}
+			]
+		}
+	]);
+	Menu.setApplicationMenu(mainMenu);
 });
 
 // Quit when all windows are closed.

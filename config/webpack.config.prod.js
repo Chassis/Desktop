@@ -50,10 +50,16 @@ module.exports = {
   target: 'electron-renderer',
 
   // In production, we only want to load the polyfills and the app code.
-  entry: [
-    require.resolve('./polyfills'),
-    paths.appIndexJs
-  ],
+  entry: {
+    main: [
+      require.resolve('./polyfills'),
+      paths.appIndexJs
+    ],
+    about: [
+      require.resolve('./polyfills'),
+      paths.appIndexJs
+    ],
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -184,6 +190,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      chunks: ['main'],
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      }
+    }),
+    // Generates an `about.html` file with the <script> injected.
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.appAboutHtml,
+      filename: 'about.html',
+      chunks: ['about'],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
