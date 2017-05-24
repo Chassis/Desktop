@@ -71,6 +71,10 @@ class CreateModal extends React.Component {
 						console.log('fulfilled');
 						dispatch( updateBoxStatus( path ) )
 					});
+
+				// Select the newly created box.
+				dispatch( selectBox( path ) );
+
 				break;
 
 			default:
