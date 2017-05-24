@@ -1,23 +1,11 @@
-import { remote } from 'electron';
 import React from 'react';
 
 import packageData from '../package.json';
-import Icon from './Icon';
 
 import './About.css';
 
 export default class About extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			update: null,
-		}
-	}
-
 	render() {
-		const { update } = this.state;
-
 		return <div className="About">
 			<div className="description">
 				<div className="logo">
@@ -30,23 +18,6 @@ export default class About extends React.Component {
 						{' '}
 						<a href="https://github.com/Chassis/Desktop/releases">View releases</a>
 					</p>
-					{ /*update ? (
-						update === 'download' ? (
-							<p className="update" onClick={() => this.setState({ update: 'ready' })}>
-								<Icon type="spinner" /> Downloading update&hellip;
-							</p>
-						) : (
-							<p className="update" onClick={() => {remote.app.relaunch();remote.app.quit();}}>
-								<button type="button">Restart Desktop to Update</button>
-							</p>
-						)
-					) : (
-						<p className="update">
-							<button type="button" onClick={() => this.setState({ update: 'download' })}>
-								Check for Updates
-							</button>
-						</p>
-					)*/}
 					<p className="credits">
 						Chassis is produced by {' '}
 						<a href="https://bronsonquick.com.au/">Bronson Quick</a>, {' '}
