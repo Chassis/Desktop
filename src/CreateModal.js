@@ -116,12 +116,14 @@ class CreateModal extends React.Component {
 				{ step > 0 ?
 					<Button
 						icon="arrow-left"
+						light
 						shortcut="esc"
 						onClick={ onBack }
 					>Back</Button>
 				:
 					<Button
 						icon="times-circle"
+						light
 						shortcut="esc"
 						onClick={ this.props.onDismiss }
 					>Cancel</Button>
