@@ -39,7 +39,7 @@ class MachineList extends React.Component {
 					onStartEditing={ () => dispatch(startEditingBox())}
 					onFinishEditing={ () => dispatch(finishEditingBox()) }
 					onRefresh={ () => dispatch(updateBoxStatus(machine.path)) }
-					onRun={ (command, args, opts) => dispatch(runCommand(machine, command, args, opts)) }
+					onRun={ (command, args, opts) => dispatch(runCommand(machine.path, command, args, opts)) }
 					onSave={ data => dispatch(saveBoxChanges(machine.path, data)) }
 					onSelect={ () => dispatch(selectBox(machine.path)) }
 				/>

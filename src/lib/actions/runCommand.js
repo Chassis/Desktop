@@ -11,31 +11,31 @@ const vagrantEnv = {
 	VAGRANT_FORCE_COLOR: 'yes',
 };
 
-export default function runCommand(machine, command, args = [], opts = {}) {
+export default function runCommand(path, command, args = [], opts = {}) {
 	return (dispatch, getStore) => {
-		if ( machine.path in window.running ) {
+		if ( path in window.running ) {
 			return;
 		}
 
 		let spawnOpts = Object.assign({}, {
-			cwd: machine.path,
+			cwd: path,
 			env: vagrantEnv,
 		}, opts);
 
 		const proc = spawn( command, args, spawnOpts );
-		window.running[ machine.path ] = proc;
+		window.running[ path ] = proc;
 
-		dispatch({ type: 'COMMAND_START', command, args, machine: machine.path });
+		dispatch({ type: 'COMMAND_START', command, args, machine: path });
 
 		proc.stdout.on('data', data => {
-			dispatch({ type: 'COMMAND_OUTPUT', data, machine: machine.path, stream: 'stdout' });
+			dispatch({ type: 'COMMAND_OUTPUT', data, machine: path, stream: 'stdout' });
 		});
 		proc.stderr.on('data', data => {
-			dispatch({ type: 'COMMAND_OUTPUT', data, machine: machine.path, stream: 'stderr' });
+			dispatch({ type: 'COMMAND_OUTPUT', data, machine: path, stream: 'stderr' });
 		});
 		proc.on('close', code => {
-			dispatch({ type: 'COMMAND_END', code, machine: machine.path });
-			delete window.running[ machine.path ];
+			dispatch({ type: 'COMMAND_END', code, machine: path });
+			delete window.running[ path ];
 		});
 	};
 }
