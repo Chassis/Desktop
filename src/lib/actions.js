@@ -20,6 +20,7 @@ export const META_KEY_UP = 'META_KEY_UP';
 export const WINDOW_BLUR = 'WINDOW_BLUR';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const RESET = 'RESET';
+export const SET_PREFERENCE = 'SET_PREFERENCE';
 
 export function addBox(name, path) {
 	return { type: ADD_BOX, machine: { name, path, domain: "", status: "" } };
@@ -75,4 +76,8 @@ export function hideModal() {
 
 export function reset() {
 	return { type: RESET };
+}
+
+export function setPreference( key, value ) {
+	return { type: 'SET_PREFERENCE', key, value };
 }
