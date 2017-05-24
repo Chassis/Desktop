@@ -35,6 +35,18 @@ function createWindow() {
 	win.on('ready-to-show', () => win.show())
 
 	win.webContents.on('will-navigate', (e, url) => {
+		// Allow internal navigation
+		if ( url.startsWith( 'static://' ) ) {
+			return;
+		}
+
+		// Allow reloading for local development.
+		if ( process.env.NODE_ENV === 'development' ) {
+			if ( url.startsWith( 'http://localhost:3000/' ) ) {
+				return;
+			}
+		}
+
 		e.preventDefault()
 		shell.openExternal(url)
 	})
