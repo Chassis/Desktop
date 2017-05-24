@@ -113,7 +113,7 @@ class CreateModal extends React.Component {
 
 		return <div className="CreateModal">
 			<Header icon="plus" title="Add New Box">
-				{ step > 1 ?
+				{ step > 0 ?
 					<Button
 						icon="arrow-left"
 						shortcut="esc"
