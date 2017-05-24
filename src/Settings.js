@@ -25,9 +25,11 @@ class Settings extends React.Component {
 			return <div className="Settings">
 				<Header icon="exclamation-triangle" title="Reset Chassis Desktop" />
 
-				<p>You're about to reset Chassis Desktop, and will need to run through the installer again.</p>
-				<p>This <strong>will</strong> remove all settings from the app, including boxes you've added.</p>
-				<p>This <strong>will not</strong> delete any boxes or machines, nor will it uninstall Vagrant or VirtualBox.</p>
+				<div className="will-reset">
+					<p>You're about to reset Chassis Desktop, and will need to run through the installer again.</p>
+					<p>This <strong>will</strong> remove all settings from the app, including boxes you've added.</p>
+					<p>This <strong>will not</strong> delete any boxes or machines, nor will it uninstall Vagrant or VirtualBox.</p>
+				</div>
 
 				<p>
 					<Button
