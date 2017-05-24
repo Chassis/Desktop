@@ -45,7 +45,14 @@ class Settings extends React.Component {
 		}
 
 		return <div className="Settings">
-			<Header icon="gear" title="Settings" />
+			<Header icon="gear" title="Settings">
+				<Button
+					icon="check"
+					light
+					shortcut="esc"
+					onClick={ onDismiss }
+				>Done</Button>
+			</Header>
 
 			<FormTable>
 				<label>
@@ -58,18 +65,6 @@ class Settings extends React.Component {
 					/>
 				</label>
 			</FormTable>
-
-			<p>
-				<Button
-					icon="times-circle"
-					shortcut="esc"
-					onClick={ onDismiss }
-				>Cancel</Button>
-				<Button
-					icon="check"
-					onClick={ onDismiss }
-				>Save</Button>
-			</p>
 
 			<p>
 				<Button
