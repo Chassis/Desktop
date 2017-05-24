@@ -12,7 +12,7 @@ const vagrantEnv = {
 };
 
 export default function runCommand(path, command, args = [], opts = {}) {
-	return (dispatch, getStore) => {
+	return (dispatch, getStore) => new Promise((resolve, reject) => {
 		if ( path in window.running ) {
 			return;
 		}
@@ -36,6 +36,7 @@ export default function runCommand(path, command, args = [], opts = {}) {
 		proc.on('close', code => {
 			dispatch({ type: 'COMMAND_END', code, machine: path });
 			delete window.running[ path ];
+			resolve( code );
 		});
-	};
+	});
 }
