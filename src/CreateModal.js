@@ -2,7 +2,7 @@ import { sep } from 'path';
 import React from 'react';
 import {connect} from 'react-redux';
 
-import { addBox, loadConfig, updateBoxStatus } from './lib/actions';
+import { addBox, cloneChassis, loadConfig, selectBox, updateBoxStatus } from './lib/actions';
 import Button from './Button';
 import Config from './CreateModal/Config';
 import Header from './Header';
@@ -50,6 +50,19 @@ class CreateModal extends React.Component {
 		const { dispatch } = this.props;
 		const { name, path, type } = this.state;
 		switch ( type ) {
+			case TYPES.CREATE:
+				// Add, clone, and refresh.
+				dispatch( addBox( name, path ) );
+
+				dispatch( cloneChassis( path ) )
+					.then( () => dispatch( loadConfig( path ) ) )
+					.then( () => dispatch( updateBoxStatus( path ) ) );
+
+				// Select the newly created box.
+				dispatch( selectBox( path ) );
+
+				break;
+
 			case TYPES.IMPORT:
 				// Add, then refresh.
 				dispatch( addBox( name, path ) );

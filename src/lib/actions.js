@@ -1,6 +1,7 @@
 import * as install from './actions/install';
 import {updateMachineConfig} from './actions/updateConfig';
 
+export {default as cloneChassis} from './actions/cloneChassis';
 export {default as loadConfig} from './actions/loadConfig';
 export {default as runCommand} from './actions/runCommand';
 export {default as updateBoxStatus} from './actions/updateBoxStatus';

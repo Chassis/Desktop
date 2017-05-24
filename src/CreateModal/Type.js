@@ -21,19 +21,21 @@ const comingSoon = () => {
 
 export default class Type extends React.Component {
 	handleSelectCreate() {
-		return comingSoon();
-		/*const title = 'Select new folder for "%s".'
 		const path = dialog.showSaveDialog({
-			title: title.replace( '%s', this.props.name ),
+			title: 'Select new folder for Chassis.',
 			properties: [ 'createDirectory' ],
 			buttonLabel: 'Create',
 			defaultPath: this.props.name,
+			message: 'A new folder will be created with this name, and Chassis will be installed inside it.',
+			nameFieldLabel: 'Folder Name:',
+			showsTagField: false,
 		});
 		if ( ! path ) {
 			return;
 		}
 
-		this.props.onSelect( TYPES.CREATE, path[0] );*/
+		this.props.onSelect( TYPES.CREATE, path );
+		// this.props.onFakeClone( path );
 	}
 
 	handleSelectRetrofit() {

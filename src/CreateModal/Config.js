@@ -11,13 +11,7 @@ export default props => {
 	let message, buttonText;
 	switch (props.type) {
 		case TYPES.CREATE:
-			message = <div>
-				<p>You are about to create a new Chassis install.</p>;
-				<p>
-					<strong>Project Directory:</strong>
-					<code>{ props.path }/</code>
-				</p>
-			</div>;
+			message = <p>You are about to create a new Chassis install.</p>;
 			buttonText = 'Create';
 			break;
 
