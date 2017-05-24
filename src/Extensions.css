@@ -1,0 +1,68 @@
+.Extensions {
+	display: flex;
+	flex-direction: column;
+}
+.Extensions .Header .search {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+	color: #fff;
+	font-size: 1rem;
+	padding: 0.3rem 0.4rem;
+}
+.Extensions .Header .search::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.75);
+}
+.Extensions .Header .search:focus {
+	outline: 0;
+	border-color: rgba(255, 255, 255, 0.5);
+}
+.extensions-list {
+	list-style: none;
+	padding: 0.5rem 0.5rem 0;
+	margin: 0;
+
+	overflow-y: scroll;
+	flex-grow: 1;
+
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+}
+.extensions-list li {
+	border: 1px solid #ccc;
+	border-radius: 0.3em;
+	padding: 1em;
+	margin-bottom: 1em;
+	flex-shrink: 0;
+	transition: transform 100ms, opacity 130ms;
+	display: flex;
+}
+.extensions-list li > :first-child {
+	flex-grow: 1;
+}
+.extensions-list li.no-match {
+	// transform: scale(0.5, 0.5);
+	opacity: 0;
+	order: 5;
+}
+.extensions-list h2 {
+	margin: 0 0 0.3em;
+	font-size: 1.3em;
+}
+.extensions-list p {
+	margin: 0 0 0.6em;
+}
+.extensions-list .author {
+	color: #888;
+	margin-bottom: 0;
+}
+.extensions-list .author img {
+	width: 28px;
+	height: 28px;
+	background: var(--color-primary);
+	padding: 2px;
+	vertical-align: middle;
+	margin-right: 0.5em;
+	border-radius: 4px;
+}
