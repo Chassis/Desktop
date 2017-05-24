@@ -66,7 +66,7 @@ class Settings extends React.Component {
 				</label>
 			</FormTable>
 
-			<p>
+			<p className="actions">
 				<Button
 					icon="exclamation-triangle"
 					onClick={() => this.setState({ showRealReset: true })}

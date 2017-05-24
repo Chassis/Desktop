@@ -7,6 +7,9 @@
 .Settings p {
 	line-height: 1.5;
 }
+.Settings .actions {
+	text-align: center;
+}
 .Settings .will-reset {
 	padding-left: 3rem;
 	padding-right: 3rem;
