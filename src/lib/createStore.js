@@ -24,6 +24,9 @@ export const DEFAULT_STATE = {
 		modal: 'install',
 		undo: null,
 	},
+	preferences: {
+		showShortcuts: true,
+	}
 };
 
 export default function createStore() {

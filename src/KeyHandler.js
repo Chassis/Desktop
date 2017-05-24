@@ -30,6 +30,10 @@ class KeyHandler extends React.Component {
 	}
 
 	render() {
+		if ( ! this.props.enabled ) {
+			return null;
+		}
+
 		let shortcut = this.props.shortcut;
 		let keyText = shortcut.toLowerCase()
 			.replace('ctrl', '^')
@@ -57,4 +61,11 @@ KeyHandler.propTypes = {
 	onTrigger: React.PropTypes.func,
 };
 
-export default connect(state => state.ui)(KeyHandler);
+const mapStateToProps = state => {
+	return {
+		...state.ui,
+		enabled: state.preferences.showShortcuts,
+	};
+};
+
+export default connect( mapStateToProps )( KeyHandler );

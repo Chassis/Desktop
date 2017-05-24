@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { reset } from './lib/actions';
+import { setPreference, reset } from './lib/actions';
 import Button from './Button';
 import FormTable from './Form/Table';
 import Header from './Header';
@@ -18,7 +18,7 @@ class Settings extends React.Component {
 	}
 
 	render() {
-		const { dispatch, onDismiss } = this.props;
+		const { dispatch, preferences, onDismiss } = this.props;
 		const { showRealReset } = this.state;
 
 		if ( showRealReset ) {
@@ -49,9 +49,10 @@ class Settings extends React.Component {
 				<label>
 					<span>Enable keyboard shortcut overlay</span>
 					<input
-						checked
+						checked={ preferences.showShortcuts }
 						readOnly
 						type="checkbox"
+						onChange={ e => dispatch( setPreference( 'showShortcuts', e.target.checked ) ) }
 					/>
 				</label>
 			</FormTable>
