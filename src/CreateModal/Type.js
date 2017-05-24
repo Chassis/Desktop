@@ -15,10 +15,6 @@ export const TYPES = {
 	IMPORT: 'IMPORT',
 };
 
-const comingSoon = () => {
-	alert('Coming soon!');
-};
-
 export default class Type extends React.Component {
 	handleSelectCreate() {
 		const path = dialog.showSaveDialog({
