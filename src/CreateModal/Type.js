@@ -35,20 +35,19 @@ export default class Type extends React.Component {
 		}
 
 		this.props.onSelect( TYPES.CREATE, path );
-		// this.props.onFakeClone( path );
 	}
 
 	handleSelectRetrofit() {
-		return comingSoon();
-		/*const path = dialog.showOpenDialog({
-			title: 'Choose an existing WordPress installation.\nA folder named "chassis" will be created inside the folder you select.',
+		const path = dialog.showOpenDialog({
+			title: 'Choose an existing WordPress installation.',
+			message: 'A folder named "chassis" will be created inside the folder you select.',
 			properties: [ 'openDirectory' ]
 		});
 		if ( ! path ) {
 			return;
 		}
 
-		this.props.onSelect( TYPES.RETROFIT, path[0] );*/
+		this.props.onSelect( TYPES.RETROFIT, path[0] );
 	}
 
 	handleSelectImport() {

@@ -1,8 +1,9 @@
-import { sep } from 'path';
+import { join, sep } from 'path';
 import React from 'react';
 import {connect} from 'react-redux';
 
 import { addBox, cloneChassis, loadConfig, selectBox, updateBoxStatus } from './lib/actions';
+import { saveConfig } from './lib/actions/updateConfig';
 import Button from './Button';
 import Config from './CreateModal/Config';
 import Header from './Header';
@@ -76,6 +77,27 @@ class CreateModal extends React.Component {
 				dispatch( selectBox( path ) );
 
 				break;
+
+			case TYPES.RETROFIT:
+				// The Chassis directory is one level deeper.
+				const chassisPath = join( path, 'chassis' );
+				const settings = {
+					paths: {
+						base: '..',
+						wp: 'wp',
+						content: 'content',
+					}
+				};
+				const configPath = join( chassisPath, 'config.local.yaml' );
+
+				dispatch( addBox( name, chassisPath ) );
+				dispatch( cloneChassis( chassisPath ) )
+					.then( () => saveConfig( configPath, settings ) )
+					.then( () => dispatch( loadConfig( chassisPath ) ) )
+					.then( () => dispatch( updateBoxStatus( chassisPath ) ) );
+
+				// Select the newly-created box.
+				dispatch( selectBox( chassisPath ) );
 
 			default:
 				// No-op.
