@@ -2,11 +2,13 @@
  * Setup for global handlers.
  */
 import ansiHTML from 'ansi-html';
+import { ipcRenderer } from 'electron';
 import which from 'which';
 
 import * as actions from './actions';
 import { loadAllConfig } from './actions/loadConfig';
 import Keys from './keys';
+import openInternal from './openInternal';
 
 // Refresh every 10 seconds.
 const REFRESH_INTERVAL = 10000;
@@ -38,4 +40,6 @@ export default store => {
 		// Refresh configuration.
 		store.dispatch(loadAllConfig());
 	}
+
+	ipcRenderer.on('open-url', (event, url) => openInternal(store)(url));
 };

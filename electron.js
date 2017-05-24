@@ -143,6 +143,12 @@ app.on('ready', () => {
 		}
 	]);
 	Menu.setApplicationMenu(mainMenu);
+
+	app.on('open-url', (event, url) => {
+		event.preventDefault();
+
+		win.webContents.send('open-url', url);
+	});
 });
 
 // Quit when all windows are closed.
