@@ -5,6 +5,9 @@
   "description": "Manage local WordPress development environments through a handy UI.",
   "private": true,
   "main": "electron.js",
+  "dependencies": {
+    "electron-updater": "^1.16.0"
+  },
   "devDependencies": {
     "ansi-html": "0.0.6",
     "autoprefixer": "6.4.1",
@@ -118,7 +121,8 @@
     },
     "files": [
       "build/**/*",
-      "electron.js"
+      "electron.js",
+      "node_modules/**/*"
     ],
     "directories": {
       "buildResources": "resources"
