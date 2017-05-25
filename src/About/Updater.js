@@ -13,7 +13,7 @@ export default class Updater extends React.Component {
 			status: null,
 			available: null,
 		};
-		ipcRenderer.on( 'update-status', (e, data) => {
+		this.listener = (e, data) => {
 			switch ( data.type ) {
 				case 'checking-for-update':
 				case 'update-not-available':
@@ -32,7 +32,12 @@ export default class Updater extends React.Component {
 					console.log( 'unknown', data );
 					break;
 			}
-		});
+		}
+		ipcRenderer.on( 'update-status', this.listener );
+	}
+
+	componentWillUnmount() {
+		ipcRenderer.removeListener( 'update-status', this.listener );
 	}
 
 	onCheck() {
