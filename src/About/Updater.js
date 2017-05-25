@@ -1,7 +1,6 @@
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
 import React from 'react';
 
-import Button from '../Button';
 import Icon from '../Icon';
 
 export default class Updater extends React.Component {
