@@ -3,6 +3,8 @@ import React from 'react';
 
 import Icon from '../Icon';
 
+import './Updater.css';
+
 export default class Updater extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,27 +48,27 @@ export default class Updater extends React.Component {
 
 		switch ( status ) {
 			case 'checking-for-update':
-				return <p className="update">
+				return <p className="Updater">
 					<Icon type="spinner" /> Checking for updates&hellip;
 				</p>;
 
 			case 'update-available':
-				return <p className="update">
+				return <p className="Updater">
 					<Icon type="spinner" /> Downloading { available.version }&hellip;
 				</p>;
 
 			case 'update-not-available':
-				return <p className="update">
+				return <p className="Updater">
 					You're up to date!
 				</p>
 
 			case 'update-downloaded':
-				return <p className="update" onClick={() => this.onInstall()}>
+				return <p className="Updater" onClick={() => this.onInstall()}>
 					<button type="button">Restart Desktop to Update</button>
 				</p>;
 
 			default:
-				return <p className="update">
+				return <p className="Updater">
 					<button type="button" onClick={ () => this.onCheck() }>
 						Check for Updates
 					</button>
