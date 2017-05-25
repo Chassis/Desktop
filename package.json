@@ -133,6 +133,11 @@
       "schemes": [
         "chassis"
       ]
+    },
+    "artifactName": "chassis-desktop-${version}.${ext}",
+    "publish": {
+      "provider": "github",
+      "vPrefixedTagName": false
     }
   }
 }
