@@ -1,6 +1,6 @@
 {
   "name": "chassis-desktop",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "productName": "Chassis Desktop",
   "description": "Manage local WordPress development environments through a handy UI.",
   "private": true,

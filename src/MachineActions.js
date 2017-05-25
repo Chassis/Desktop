@@ -33,12 +33,12 @@ export default props => {
 
 		case 'launching':
 			status = <p>Status: <strong>Launching</strong> <LoadingIndicator /></p>;
-			mainActions = <p className="primary"><Button>Cancel</Button></p>;
+			// mainActions = <p className="primary"><Button>Cancel</Button></p>;
 			break;
 
 		case 'halting':
 			status = <p>Status: <strong>Halting</strong> <LoadingIndicator /></p>;
-			mainActions = <p className="primary"><Button>Cancel</Button></p>;
+			// mainActions = <p className="primary"><Button>Cancel</Button></p>;
 			break;
 
 		default:
