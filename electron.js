@@ -112,6 +112,10 @@ app.on('ready', () => {
 					label: 'About ' + app.getName(),
 					click: () => createAboutWindow(),
 				},
+				{
+					label: 'Open Debugger',
+					click: () => BrowserWindow.getFocusedWindow().webContents.openDevTools(),
+				},
 				{type: 'separator'},
 				{role: 'services', submenu: []},
 				{type: 'separator'},
