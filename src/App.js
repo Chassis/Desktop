@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { hideModal, showModal } from './lib/actions';
 import CreateModal from './CreateModal';
+import Extensions from './Extensions';
 import Header from './Header';
 import Installer from './Installer';
 import MachineList from './MachineList';
@@ -31,6 +32,10 @@ class App extends Component {
 
 			case 'settings':
 				modalComponent = <Modal key="settings"><Settings onDismiss={onDismiss} /></Modal>;
+				break;
+
+			case 'extensions':
+				modalComponent = <Modal key="extensions"><Extensions onDismiss={onDismiss} /></Modal>;
 				break;
 
 			default:
