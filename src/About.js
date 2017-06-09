@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Updater from './About/Updater';
 import packageData from '../package.json';
 
 import './About.css';
@@ -18,6 +19,7 @@ export default class About extends React.Component {
 						{' '}
 						<a href="https://github.com/Chassis/Desktop/releases">View releases</a>
 					</p>
+					<Updater />
 					<p className="credits">
 						Chassis is produced by {' '}
 						<a href="https://bronsonquick.com.au/">Bronson Quick</a>, {' '}

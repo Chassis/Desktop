@@ -30,9 +30,6 @@ html {
 	margin-top: 0;
 	margin-bottom: 0.75em;
 }
-.About .update .fa-spinner {
-	animation: Splash-loader infinite 2s linear;
-}
 .About .logo {
 	width: 200px;
 	padding: 1rem;
