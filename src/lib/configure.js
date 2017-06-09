@@ -2,6 +2,7 @@
  * Setup for global handlers.
  */
 import ansiHTML from 'ansi-html';
+import fixPath from 'fix-path';
 import which from 'which';
 
 import * as actions from './actions';
@@ -21,6 +22,9 @@ export default store => {
 
 	window.keyHandler = new Keys();
 	window.keyHandler.listen( store );
+
+	// Fix the process.env path, which isn't inherited by the shell on macOS.
+	fixPath();
 
 	if ( ! state.installer.installed.chassis ) {
 		// Search for installed applications.
