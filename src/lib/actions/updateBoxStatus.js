@@ -17,8 +17,16 @@ export default function updateBoxStatus(path) {
 			cwd: machine.path,
 		});
 		let output = '';
+		let error = '';
 		process.stdout.on('data', data => { output += data });
-		process.on('close', () => {
+		process.stderr.on('data', data => { error += data });
+		process.on('close', code => {
+			if ( code != 0 ) {
+				console.log( error );
+				dispatch({ type: UPDATE_BOX, path, data: { status: 'not_created' }});
+				return;
+			}
+
 			const parsed = parser(output);
 			console.log( parsed );
 			const stateItem = parsed.find(item => item.type === 'state' );
