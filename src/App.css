@@ -4,11 +4,6 @@
 	background: #ececec;
 	display: flex;
 	flex-direction: column;
-
-	--color-primary: #29ABE2;
-	--color-primary-red: 41;
-	--color-primary-green: 171;
-	--color-primary-blue: 226;
 }
 
 .app-content {
