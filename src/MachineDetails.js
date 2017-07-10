@@ -1,13 +1,13 @@
 import React from 'react';
 import {spawn} from 'child_process';
 import { shell } from 'electron';
-import ansiHTML from 'ansi-html';
 // import {AllHtmlEntities} from 'html-entities';
 
 import './MachineDetails.scss';
 
 import Button from './Button';
 import MachineActions from './MachineActions';
+import Terminal from './Terminal';
 
 // const entities = new AllHtmlEntities();
 
@@ -69,21 +69,10 @@ export default class MachineDetails extends React.Component {
 	}
 
 	render() {
-		// let terminal = ansiHTML(entities.encode(this.state.output));
 		let { machine, terminal } = this.props;
 		let { showingConsole } = this.state;
 
 		let status = stateForCommand( terminal ) || machine.status;
-
-		let output;
-		let last;
-		if ( terminal.output ) {
-			output = ansiHTML(terminal.output);
-			last = ansiHTML(terminal.output.trim('\n').split('\n').slice(-1)[0]);
-		} else {
-			// Placeholder content for terminal.
-			output = last = '<span class="no-content">No output</span>';
-		}
 
 		return <div className="MachineDetails">
 			<MachineActions
@@ -98,14 +87,10 @@ export default class MachineDetails extends React.Component {
 			/>
 
 			<div className="terminal-wrap">
-				<div
-					className={ showingConsole ? "terminal full" : "terminal preview" }
-					ref={ ref => this.terminal = ref }
-				>
-					<pre
-						dangerouslySetInnerHTML={{ __html: showingConsole ? output : last }}
-					/>
-				</div>
+				<Terminal
+					expanded={ showingConsole }
+					output={ terminal.output }
+				/>
 				<Button
 					icon={ showingConsole ? "minus-square-o" : "plus-square-o" }
 					light

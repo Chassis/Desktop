@@ -1,0 +1,21 @@
+.Terminal {
+	background: darken(#29ABE2, 40%);
+	color: #fff;
+	height: 2.2rem;
+	width: 100%;
+	margin-top: 1rem;
+	overflow: auto;
+}
+.Terminal.full {
+	height: 10rem;
+}
+.Terminal pre {
+	padding: 0.6rem 1rem;
+	width: 100%;
+	margin: 0;
+	font-size: 0.6875rem;
+	line-height: 1.4;
+}
+.Terminal .no-content {
+	opacity: 0.4;
+}
