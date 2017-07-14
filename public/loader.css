@@ -29,6 +29,11 @@ body {
 	max-width: 100%;
 	height: 100%;
 	display: flex;
+
+	--color-primary: #29ABE2;
+	--color-primary-red: 41;
+	--color-primary-green: 171;
+	--color-primary-blue: 226;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -21,7 +21,7 @@ export default function updateBoxStatus(path) {
 		process.stdout.on('data', data => { output += data });
 		process.stderr.on('data', data => { error += data });
 		process.on('close', code => {
-			if ( code != 0 ) {
+			if ( code !== 0 ) {
 				console.log( error );
 				dispatch({ type: UPDATE_BOX, path, data: { status: 'not_created' }});
 				return;
