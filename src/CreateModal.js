@@ -98,6 +98,7 @@ class CreateModal extends React.Component {
 
 				// Select the newly-created box.
 				dispatch( selectBox( chassisPath ) );
+				break;
 
 			default:
 				// No-op.
