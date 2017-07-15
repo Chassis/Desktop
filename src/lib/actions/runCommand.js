@@ -3,7 +3,6 @@ import { spawn } from 'child_process';
 window.running = {};
 
 const vagrantEnv = {
-	...process.env,
 	CLICOLOR_FORCE: 'yes',
 	GIT_COLOR: 'yes',
 
@@ -19,7 +18,10 @@ export default function runCommand(path, command, args = [], opts = {}) {
 
 		let spawnOpts = Object.assign({}, {
 			cwd: path,
-			env: vagrantEnv,
+			env: {
+				...process.env,
+				...vagrantEnv,
+			},
 		}, opts);
 
 		const proc = spawn( command, args, spawnOpts );
