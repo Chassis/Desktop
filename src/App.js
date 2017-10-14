@@ -48,12 +48,12 @@ class App extends Component {
 			{ installed ?
 				<Header icon={ logo } title="Chassis">
 					<Button
-						icon="bullhorn"
+						icon="github"
 						light
-						noborder
-						onClick={ () => openBrowser( 'https://github.com/Chassis/Desktop/issues' ) }
+						shortcut="Cmd+L"
+						onClick={ () => dispatch(showModal('github')) }
 					>
-						Feedback
+					 Connect
 					</Button>
 					<Button
 						icon="gear"
