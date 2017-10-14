@@ -48,14 +48,6 @@ class App extends Component {
 			{ installed ?
 				<Header icon={ logo } title="Chassis">
 					<Button
-						icon="bullhorn"
-						light
-						noborder
-						onClick={ () => openBrowser( 'https://github.com/Chassis/Desktop/issues' ) }
-					>
-						Feedback
-					</Button>
-					<Button
 						icon="gear"
 						light
 						noborder
