@@ -48,6 +48,14 @@ class App extends Component {
 			{ installed ?
 				<Header icon={ logo } title="Chassis">
 					<Button
+						icon="github"
+						light
+						shortcut="Cmd+L"
+						onClick={ () => dispatch(showModal('github')) }
+					>
+					 Connect
+					</Button>
+					<Button
 						icon="gear"
 						light
 						noborder
