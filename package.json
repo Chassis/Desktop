@@ -47,7 +47,7 @@
     "jest": "15.1.1",
     "js-yaml": "^3.7.0",
     "json-loader": "0.5.4",
-    "node-sass": "^3.10.1",
+    "node-sass": "^4.13.0",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "plist": "^2.0.1",
