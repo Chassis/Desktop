@@ -68,7 +68,7 @@
     "style-loader": "0.13.1",
     "tildify": "^1.2.0",
     "url-loader": "0.5.7",
-    "webpack": "1.13.2",
+    "webpack": "5.94.0",
     "webpack-dev-server": "1.16.1",
     "whatwg-fetch": "1.0.0",
     "which": "^1.2.12"
